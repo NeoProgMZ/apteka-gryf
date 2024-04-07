@@ -1,0 +1,9 @@
+soap_endpoint.soap_server:
+  path: '/services/sync/soap/{endpoint}'
+  defaults:
+    _controller: '\Drupal\soap_endpoint\Controller\SoapController::soap'
+  requirements:
+    _access: 'TRUE'
+    _method: 'GET|POST'
+  options:
+    no_cache: 'TRUE'

@@ -9,6 +9,7 @@ additional_fqdns: []
 database:
     type: mariadb
     version: "10.4"
+performance_mode: none
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
@@ -274,5 +275,6 @@ web_environment: []
 # for them. Example:
 #hooks:
 # post-import-db:
-#   - exec: drush cr
-#   - exec: drush updb
+#   - exec: drush sql:sanitize
+#   - exec: drush updatedb
+#   - exec: drush cache:rebuild

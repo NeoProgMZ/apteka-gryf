@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<definitions name="iShopService" targetNamespace="urn:iShopService"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="urn:iShopService"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/">
+    <types xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <message name="GetOrdersRequest">
+        <part name="AUserName" type="xsd:string" />
+        <part name="APassword" type="xsd:string" />
+        <part name="ALastOrderId" type="xsd:int" />
+        <part name="ALastDateTime" type="xsd:string" />
+    </message>
+    <message name="GetOrdersResponse">
+        <part name="return" type="xsd:string" />
+    </message>
+    <message name="SetOrdersRequest">
+        <part name="AUserName" type="xsd:string" />
+        <part name="APassword" type="xsd:string" />
+        <part name="Orders" type="xsd:string" />
+    </message>
+    <message name="SetOrdersResponse">
+        <part name="return" type="xsd:boolean" />
+    </message>
+    <message name="SetOfferRequest">
+        <part name="AUserName" type="xsd:string" />
+        <part name="APassword" type="xsd:string" />
+        <part name="Offer" type="xsd:string" />
+    </message>
+    <message name="SetOfferResponse">
+        <part name="return" type="xsd:boolean" />
+    </message>
+    <portType name="iShopServicePort">
+        <operation name="GetOrders">
+            <input message="tns:GetOrdersRequest" />
+            <output message="tns:GetOrdersResponse" />
+        </operation>
+        <operation name="SetOrders">
+            <input message="tns:SetOrdersRequest" />
+            <output message="tns:SetOrdersResponse" />
+        </operation>
+        <operation name="SetOffer">
+            <input message="tns:SetOfferRequest" />
+            <output message="tns:SetOfferResponse" />
+        </operation>
+    </portType>
+    <binding name="iShopServiceBinding" type="tns:iShopServicePort">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="GetOrders">
+            <soap:operation soapAction="urn:SOAP_ISHOP#soap_ishop_server#GetOrders" />
+            <input>
+                <soap:body use="encoded" namespace="urn:SOAP_ISHOP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:SOAP_ISHOP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="SetOrders">
+            <soap:operation soapAction="urn:SOAP_ISHOP#soap_ishop_server#SetOrders" />
+SPECYFIKACJE
+KS-AOW
+SPECYFIKACJA WYMIANY DANYCH POMIĘDZY PROGRAMEM KS-APTEKA WINDOWS
+I SKLEPEM INTERNETOWYM FIRMY ZEWNĘTRZNEJ
+ISO 9001:2008, 27001:2013 Dokument: 1 Wydanie: 2020-04-01 Waga: 100
+ApwWebSrv_iApteka_2020_04_01 Wykonał: Kamil Kotarski Sprawdził: Adam Kukowka Zatwierdził: Adam Kukowka Strona 19 z 23
+            <input>
+                <soap:body use="encoded" namespace="urn:SOAP_ISHOP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:SOAP_ISHOP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="SetOffer">
+            <soap:operation soapAction="urn:SOAP_ISHOP#soap_ishop_server#SetOffer" />
+            <input>
+                <soap:body use="encoded" namespace="urn:SOAP_ISHOP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:SOAP_ISHOP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+    </binding>
+    <service name="iShopServiceService">
+        <documentation />
+        <port name="iShopServicePort" binding="tns:iShopServiceBinding">
+            <soap:address location="https://www.apteka.pl/connect/ishopservice.php" />
+        </port>
+    </service>
+</definitions>
