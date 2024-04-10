@@ -59,12 +59,6 @@
         </operation>
         <operation name="SetOrders">
             <soap:operation soapAction="urn:SOAP_ISHOP#soap_ishop_server#SetOrders" />
-SPECYFIKACJE
-KS-AOW
-SPECYFIKACJA WYMIANY DANYCH POMIĘDZY PROGRAMEM KS-APTEKA WINDOWS
-I SKLEPEM INTERNETOWYM FIRMY ZEWNĘTRZNEJ
-ISO 9001:2008, 27001:2013 Dokument: 1 Wydanie: 2020-04-01 Waga: 100
-ApwWebSrv_iApteka_2020_04_01 Wykonał: Kamil Kotarski Sprawdził: Adam Kukowka Zatwierdził: Adam Kukowka Strona 19 z 23
             <input>
                 <soap:body use="encoded" namespace="urn:SOAP_ISHOP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
             </input>

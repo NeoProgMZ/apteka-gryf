@@ -1,5 +1,5 @@
 soap_endpoint.soap_server:
-  path: '/services/sync/soap/{endpoint}'
+  path: '/services/sync/soap'
   defaults:
     _controller: '\Drupal\soap_endpoint\Controller\SoapController::soap'
   requirements:

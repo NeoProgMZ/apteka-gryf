@@ -4,21 +4,29 @@
  * SOAP requests controller class.
  */
 
-namespace Drupal\access_soap_module\Controller;
+namespace Drupal\soap_endpoint\Controller;
+
+use SoapFault;
+use SoapServer;
+
+use Drupal\Core\Controller\ControllerBase;
+
+use Drupal\Core\DependencyInjection\ContainerNotInitializedException;
+
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Drupal\Core\Controller\ControllerBase;
-use SoapFault;
-use Drupal\Core\DependencyInjection\ContainerNotInitializedException;
-use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
-use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException;
 use Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
+use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
+use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
+
+use Drupal\soap_endpoint\Client\Processor;
 
 /**
  * Controller for SOAP requests.
@@ -60,11 +68,9 @@ class SoapController extends ControllerBase
     /**
      * Soap method.
      *
-     * @param string $endpoint Endpoint url as a string.
-     *
      * @return bool|Response A response object or FALSE on failure.
      */
-    public function soap($endpoint)
+    public function soap()
     {
         // Get the Symfony request component so that we can adapt the page request
         // accordingly.
@@ -72,52 +78,50 @@ class SoapController extends ControllerBase
 
         // Respond appropriately to the different HTTP verbs.
         switch ($request->getMethod()) {
-            case 'GET':
-                // This is a get request, so we handle it by returning a WSDL file.
-                $wsdlFileRender = $this->handleGetRequest();
+        case 'GET':
+            // $client = new SoapClient($this->getWsdlDocPath(), ['location' => 'https://apteka.ddev.site/services/sync/soap']);
+            // print_r('<pre>');
+            // print_r(
+            //     $client->__soapCall(
+            //         'SetOffer', ['AUserName' => 'mz', 'APassword' => 'WUT!?', 'AOffer' => 'some xml']
+            //     )
+            // );
+            // exit();
+            // This is a get request, so we handle it by returning a WSDL file.
+            $wsdl = file_get_contents($this->getWsdlDocPath());
+            // Return the WSDL file as output.
+            $response = new Response($wsdl);
+            $response->headers->set(
+                'Content-type',
+                'application/xml; charset=utf-8'
+            );
+            return $response;
 
-                if ($wsdlFileRender == false) {
-                    // If the WSDL file was not returned then we issue a 404.
-                    throw new NotFoundHttpException();
-                }
-                // @FIXME just read and return the fi-in file contents!
-                // Render the WSDL file.
-                $wsdlFileOutput = \Drupal::service('renderer')->render($wsdlFileRender);
+        case 'POST':
+            // print_r('<pre>');
+            // print_r($request);
+            // exit();
+            // Handle SOAP Request.
+            $result = $this->handleSoapRequest();
 
-                // Return the WSDL file as output.
-                $response = new Response($wsdlFileOutput);
-                $response->headers->set(
-                    'Content-type',
-                    'application/xml; charset=utf-8'
-                );
-                return $response;
-
-            case 'POST':
-                // Handle SOAP Request.
-                $result = $this->handleSoapRequest();
-
-                if ($result == false) {
-                    // False should only be returned via a non-existent endpoint,
-                    // so we return a 404.
-                    throw new NotFoundHttpException();
-                }
-
-                // Return the response from the SOAP request.
-                $response = new Response($result);
-                $response->headers->set(
-                    'Content-type',
-                    'application/xml; charset=utf-8'
-                );
-                return $response;
-
-            default:
-                // Not a GET or a POST request, return a 404.
+            if ($result == false) {
+                // False should only be returned via a non-existent endpoint,
+                // so we return a 404.
                 throw new NotFoundHttpException();
-        }
-    }
+            }
 
-    protected function handleGetRequest()
-    {
+            // Return the response from the SOAP request.
+            $response = new Response($result);
+            $response->headers->set(
+                'Content-type',
+                'application/xml; charset=utf-8'
+            );
+            return $response;
+
+        default:
+            // Not a GET or a POST request, return a 404.
+            throw new NotFoundHttpException();
+        }
     }
 
     /**
@@ -133,14 +137,6 @@ class SoapController extends ControllerBase
      */
     protected function handleSoapRequest()
     {
-        // Construct the WSDL file location.
-        $wsdlUri = \Drupal::service(
-            'extension.list.module'
-        )->getPath(
-            'soap_endpoint'
-        ) . '/wsdl.wsdl';
-        $soapClass = 'Drupal\soap_endpoint\Soap\SoapClass';
-
         try {
             // Create some options for the SoapServer.
             $serverOptions = [
@@ -149,13 +145,12 @@ class SoapController extends ControllerBase
                 'wsdl_cache' => WSDL_CACHE_DISK,
                 'wsdl_cache_ttl' => 604800,
                 'wsdl_cache_limit' => 10,
-                'send_errors' => false,
+                'send_errors' => true, // @FIXME change to false in production!
             ];
 
             // Instantiate the SoapServer.
-            $soapServer = new \SoapServer($wsdlUri, $serverOptions);
-            $soapServer->setClass($soapClass);
-
+            $soapServer = new SoapServer($this->getWsdlDocPath(), $serverOptions);
+            $soapServer->setClass(Processor::class);
             // Turn output buffering on.
             ob_start();
             // Handle the SOAP request.
@@ -168,12 +163,23 @@ class SoapController extends ControllerBase
             return $result;
         } catch (\Exception $exc) {
             // An error happened so we log it.
-            \Drupal::logger('access_soap_module')->error(
+            \Drupal::logger('soap_endpoint')->error(
                 'soap error ' . $exc->getMessage()
             );
             // Then return a SoapFault object as the result.
             $soap_fault = new \SoapFault($exc->getCode(), $exc->getMessage());
             return $soap_fault;
         }
+    }
+
+    /**
+     * Return WSDL document path.
+     *
+     * @return string
+     */
+    private function getWsdlDocPath(): string
+    {
+        // @QUESTION how to handle this better?
+        return DRUPAL_ROOT . '/modules/custom/soap_endpoint/wsdl.wsdl';
     }
 }
