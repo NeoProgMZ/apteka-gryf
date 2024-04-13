@@ -6,13 +6,12 @@
 
 namespace Drupal\soap_endpoint\Client;
 
-use Exception;
 use SimpleXMLElement;
 
 /**
  * SOAP handler.
  */
-class SetOffer
+class SetOrders
 {
 
     /**

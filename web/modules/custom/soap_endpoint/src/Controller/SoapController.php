@@ -11,8 +11,6 @@ use SoapServer;
 
 use Drupal\Core\Controller\ControllerBase;
 
-use Drupal\Core\DependencyInjection\ContainerNotInitializedException;
-
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use Symfony\Component\HttpFoundation\Response;
@@ -26,7 +24,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
 
-use Drupal\soap_endpoint\Client\Processor;
+use Drupal\Core\DependencyInjection\ContainerNotInitializedException;
+
+use Drupal\soap_endpoint\Client\Process;
+use SoapClient;
 
 /**
  * Controller for SOAP requests.
@@ -68,66 +69,52 @@ class SoapController extends ControllerBase
     /**
      * Soap method.
      *
-     * @return bool|Response A response object or FALSE on failure.
+     * @return Response A response object or FALSE on failure.
      */
     public function soap()
     {
         // Get the Symfony request component so that we can adapt the page request
         // accordingly.
         $request = $this->request->getCurrentRequest();
+        $response = new Response();
+        // $logName = 'test.log';
 
         // Respond appropriately to the different HTTP verbs.
         switch ($request->getMethod()) {
-        case 'GET':
-            // $client = new SoapClient($this->getWsdlDocPath(), ['location' => 'https://apteka.ddev.site/services/sync/soap']);
-            // print_r('<pre>');
-            // print_r(
-            //     $client->__soapCall(
-            //         'SetOffer', ['AUserName' => 'mz', 'APassword' => 'WUT!?', 'AOffer' => 'some xml']
-            //     )
-            // );
-            // exit();
-            // This is a get request, so we handle it by returning a WSDL file.
-            $wsdl = file_get_contents($this->getWsdlDocPath());
-            // Return the WSDL file as output.
-            $response = new Response($wsdl);
-            $response->headers->set(
-                'Content-type',
-                'application/xml; charset=utf-8'
-            );
-            return $response;
-
-        case 'POST':
-            // print_r('<pre>');
-            // print_r($request);
-            // exit();
-            // Handle SOAP Request.
-            $result = $this->handleSoapRequest();
-
-            if ($result == false) {
-                // False should only be returned via a non-existent endpoint,
-                // so we return a 404.
+            case 'GET':
+                // // @DEBUG !->
+                // $soapServer = new SoapClient($this->getWsdlDocPath());
+                // print_r($soapServer->__getFunctions());
+                // exit();
+                // // @DEBUG !<-
+                // This is a get request, so we handle it by returning a WSDL file.
+                $wsdl = file_get_contents($this->getWsdlDocPath());
+                // Return the WSDL file as output.
+                $response->setContent($wsdl);
+                // $logName = 'test2.log';
+                break;
+            case 'POST':
+                $result = $this->handleSoapRequest();
+                // Return the response from the SOAP request.
+                $response->setContent($result);
+                break;
+            default:
+                // Not a GET or a POST request, return a 404.
                 throw new NotFoundHttpException();
-            }
-
-            // Return the response from the SOAP request.
-            $response = new Response($result);
-            $response->headers->set(
-                'Content-type',
-                'application/xml; charset=utf-8'
-            );
-            return $response;
-
-        default:
-            // Not a GET or a POST request, return a 404.
-            throw new NotFoundHttpException();
         }
+
+        $response->headers->set(
+            'Content-type',
+            'application/xml; charset=windows-1250'
+        );
+
+        return $response;
     }
 
     /**
      * Manage SOAP request.
      *
-     * @return string|false|SoapFault
+     * @return string|SoapFault
      *
      * @throws ContainerNotInitializedException
      * @throws ServiceCircularReferenceException
@@ -140,7 +127,7 @@ class SoapController extends ControllerBase
         try {
             // Create some options for the SoapServer.
             $serverOptions = [
-                'encoding' => 'UTF-8',
+                'encoding' => 'windows-1250',
                 'wsdl_cache_enabled' => 1,
                 'wsdl_cache' => WSDL_CACHE_DISK,
                 'wsdl_cache_ttl' => 604800,
@@ -150,7 +137,7 @@ class SoapController extends ControllerBase
 
             // Instantiate the SoapServer.
             $soapServer = new SoapServer($this->getWsdlDocPath(), $serverOptions);
-            $soapServer->setClass(Processor::class);
+            $soapServer->setClass(Process::class);
             // Turn output buffering on.
             ob_start();
             // Handle the SOAP request.
@@ -159,15 +146,14 @@ class SoapController extends ControllerBase
             $result = ob_get_contents();
             // Removes topmost output buffer.
             ob_end_clean();
+            // @QUESTION is this needed in production??
+            header_remove();
             // Send back the result.
             return $result;
         } catch (\Exception $exc) {
-            // An error happened so we log it.
-            \Drupal::logger('soap_endpoint')->error(
-                'soap error ' . $exc->getMessage()
-            );
             // Then return a SoapFault object as the result.
             $soap_fault = new \SoapFault($exc->getCode(), $exc->getMessage());
+
             return $soap_fault;
         }
     }
