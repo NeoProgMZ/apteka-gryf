@@ -16,3 +16,10 @@ drush:
 
     # Enable verbose mode.
     verbose: true
+  command:
+    config:
+      export:
+        options:
+          destination: /var/www/html/config_sync
+          commit: true
+          message: "Config backup"
