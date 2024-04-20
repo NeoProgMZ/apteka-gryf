@@ -1,0 +1,23 @@
+uuid: 74e6ec7b-ec17-4172-b0f0-efc9bdcb754e
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - pharmacy
+_core:
+  default_config_hash: xaGGJyQOoYa0xFnmTDLlP6aKowuiZWS8be-13DeVxI4
+id: pharmacy_search_form_wide
+theme: pharmacy
+region: top_header_form
+weight: -7
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

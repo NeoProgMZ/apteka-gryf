@@ -1,0 +1,9 @@
+uuid: 31d148c3-1244-4e24-91a3-e705e90f0cfc
+langcode: en
+status: true
+dependencies: {  }
+currencyCode: PLN
+name: 'Polish Zloty'
+numericCode: '985'
+symbol: PLN
+fractionDigits: 2

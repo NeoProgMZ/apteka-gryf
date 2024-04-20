@@ -1,0 +1,25 @@
+uuid: 1db11dc3-4305-4782-8f46-30e2693f444d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pharmacy
+_core:
+  default_config_hash: f6EyBLmcgjmMxHkOrdbnKl6DwXIvVTvYNMaKY1p9vOI
+id: pharmacy_site_branding
+theme: pharmacy
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

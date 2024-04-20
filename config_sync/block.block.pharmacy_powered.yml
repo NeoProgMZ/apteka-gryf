@@ -1,0 +1,22 @@
+uuid: 921dc1eb-9f4a-427e-a2d4-f7b5e5e0e897
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pharmacy
+_core:
+  default_config_hash: ub7fA8TMNQwLcjkCB8-FoRLAqjuZ6QFA2sCoYHypit4
+id: pharmacy_powered
+theme: pharmacy
+region: footer_fifth
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }
