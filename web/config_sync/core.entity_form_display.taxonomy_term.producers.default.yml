@@ -1,0 +1,52 @@
+uuid: 0ddc11c1-daa9-4a3c-b3f0-2d291a7ff5f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.producers.field_producer_country
+    - taxonomy.vocabulary.producers
+  module:
+    - address
+    - path
+    - text
+id: taxonomy_term.producers.default
+targetEntityType: taxonomy_term
+bundle: producers
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_producer_country:
+    type: address_country_default
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

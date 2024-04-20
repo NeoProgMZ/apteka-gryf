@@ -1,0 +1,30 @@
+uuid: dc3fc18b-7012-40f5-a935-097f99be4ed8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.producers.field_producer_country
+    - taxonomy.vocabulary.producers
+  module:
+    - address
+    - text
+id: taxonomy_term.producers.default
+targetEntityType: taxonomy_term
+bundle: producers
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_producer_country:
+    type: address_country_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

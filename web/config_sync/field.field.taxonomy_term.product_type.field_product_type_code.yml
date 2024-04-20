@@ -1,0 +1,19 @@
+uuid: 04119e1e-004a-4a5c-8d00-ec69ec4a2953
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_product_type_code
+    - taxonomy.vocabulary.product_type
+id: taxonomy_term.product_type.field_product_type_code
+field_name: field_product_type_code
+entity_type: taxonomy_term
+bundle: product_type
+label: Code
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

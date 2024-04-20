@@ -1,0 +1,22 @@
+uuid: 4084fd79-549e-43a9-977f-87c9e5aae9cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - pharmacy
+_core:
+  default_config_hash: 0xjqqcZZXt4WE01VVzB0fN5PuQfVDrX9N2e3hHNQsL8
+id: pharmacy_help
+theme: pharmacy
+region: highlighted
+weight: -2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

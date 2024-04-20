@@ -1,0 +1,84 @@
+uuid: b65b056f-a50d-4fff-8dda-bb8351dba35d
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.field.commerce_product.default.field_description
+    - field.field.commerce_product.default.field_image
+    - field.field.commerce_product.default.field_perscription_required
+    - field.field.commerce_product.default.field_product_pkwiu
+    - field.field.commerce_product.default.field_product_producer
+    - field.field.commerce_product.default.field_product_type
+    - field.field.commerce_product.default.field_product_unit
+    - field.field.commerce_product.default.field_vat
+  module:
+    - commerce_product
+    - image
+    - text
+_core:
+  default_config_hash: 10qgl6V_HwkrJufzsNCV75OpqOeMzzKDJb3BhaogmzQ
+id: commerce_product.default.default
+targetEntityType: commerce_product
+bundle: default
+mode: default
+content:
+  field_description:
+    type: text_summary_or_trimmed
+    label: above
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_product_producer:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_product_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_product_unit:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    label: hidden
+    settings:
+      combine: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  created: true
+  field_perscription_required: true
+  field_product_pkwiu: true
+  field_vat: true
+  stores: true
+  title: true
+  uid: true

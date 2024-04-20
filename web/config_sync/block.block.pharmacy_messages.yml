@@ -1,0 +1,22 @@
+uuid: 4af49ac5-baa1-4d8a-a96c-55322e32970a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pharmacy
+_core:
+  default_config_hash: kR3SpDjeChVbnPNOpQz0D3ViiesVXIZ6DHYfCxvlimo
+id: pharmacy_messages
+theme: pharmacy
+region: highlighted
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

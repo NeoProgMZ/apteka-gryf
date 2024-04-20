@@ -1,0 +1,22 @@
+uuid: dc6e9829-164a-45d7-9d88-719535f2e8b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pharmacy
+_core:
+  default_config_hash: JupAjGPKxwXAmkzNfLcuvy6jB2BTeMKTSEACJ3tFbAo
+id: pharmacy_content
+theme: pharmacy
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }
