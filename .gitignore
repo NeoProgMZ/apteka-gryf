@@ -27,3 +27,5 @@
 # Ignore .env files as they are personal
 /.env
 
+# Ignore macos directories
+**/.DS_Store
