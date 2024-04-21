@@ -1,0 +1,18 @@
+uuid: 802dc9c6-bac4-46d9-a6cf-c949cb03d64c
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_bestseller
+field_name: field_bestseller
+entity_type: commerce_product_variation
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

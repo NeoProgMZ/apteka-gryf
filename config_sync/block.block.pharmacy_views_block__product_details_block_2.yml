@@ -1,0 +1,29 @@
+uuid: f906e4bb-fc92-463f-b0b6-a3a4785b6e58
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.product_details
+  module:
+    - system
+    - views
+  theme:
+    - pharmacy
+id: pharmacy_views_block__product_details_block_2
+theme: pharmacy
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:product_details-block_2'
+settings:
+  id: 'views_block:product_details-block_2'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

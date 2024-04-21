@@ -1,0 +1,23 @@
+uuid: 3a83cbb6-ac00-4f79-9141-d243edee3bba
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.default
+    - field.storage.commerce_product_variation.field_promoted
+id: commerce_product_variation.default.field_promoted
+field_name: field_promoted
+entity_type: commerce_product_variation
+bundle: default
+label: Promoted
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

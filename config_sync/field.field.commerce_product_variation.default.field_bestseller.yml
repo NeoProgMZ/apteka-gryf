@@ -1,0 +1,23 @@
+uuid: 30ffa734-1962-4e5d-9a1b-e6a72aca49e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.default
+    - field.storage.commerce_product_variation.field_bestseller
+id: commerce_product_variation.default.field_bestseller
+field_name: field_bestseller
+entity_type: commerce_product_variation
+bundle: default
+label: Bestseller
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -19,11 +19,11 @@ settings:
     uuid: ''
     alt: ''
     title: ''
-    width: null
-    height: null
+    width: 225
+    height: 225
 module: image
 locked: false
-cardinality: -1
+cardinality: 5
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

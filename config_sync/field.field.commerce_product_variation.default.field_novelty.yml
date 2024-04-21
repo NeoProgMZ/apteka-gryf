@@ -1,0 +1,23 @@
+uuid: 93d0d1b1-eab6-4ce3-9f30-aa1c325e2b9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.default
+    - field.storage.commerce_product_variation.field_novelty
+id: commerce_product_variation.default.field_novelty
+field_name: field_novelty
+entity_type: commerce_product_variation
+bundle: default
+label: Novelty
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

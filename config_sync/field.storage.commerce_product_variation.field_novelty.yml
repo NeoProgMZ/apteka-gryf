@@ -1,0 +1,18 @@
+uuid: 65d5ac8c-17cd-49de-83d8-73c3fa45a112
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.field_novelty
+field_name: field_novelty
+entity_type: commerce_product_variation
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
