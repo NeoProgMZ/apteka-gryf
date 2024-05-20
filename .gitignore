@@ -29,3 +29,5 @@
 
 # Ignore macos directories
 **/.DS_Store
+# DDEV extra
+.ddev/homeadditions/.ssh

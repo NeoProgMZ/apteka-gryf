@@ -46,6 +46,7 @@
         "drupal/field_validation": "^1.1",
         "drupal/phone_international": "^3.3",
         "drupal/search_api": "^1.28",
+        "drupal/stm": "^1.2",
         "drupal/symfony_mailer": "^1.0@beta",
         "drupal/token": "^1.11",
         "drupalcommerce/commerce_base": "10.x-dev",

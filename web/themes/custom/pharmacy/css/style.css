@@ -2,3 +2,28 @@
  * @file
  * Subtheme specific CSS.
  */
+.block-menu.navigation.menu--cateogories ul.nav {
+    flex-direction: column;
+}
+
+a.navbar-brand {
+    display: grid;
+    grid-gap: 1rem;
+}
+
+a.navbar-brand img {
+    grid-column: 1/1;
+    grid-row: 1 / span 2;
+}
+
+a.navbar-brand span {
+    grid-column: 2/2;
+}
+
+a.navbar-brand span.header-site-name {
+    grid-row: 1/1;
+}
+
+a.navbar-brand span.site-name-slogan {
+    grid-row: 2/2;
+}
