@@ -1,0 +1,8 @@
+uuid: 8cb0df5d-3309-40cc-9be2-7a95e4ae677d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Body parts'
+vid: body_parts
+description: ''
+weight: 0

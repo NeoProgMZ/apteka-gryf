@@ -19,6 +19,7 @@ module:
   commerce_payment: 0
   commerce_price: 0
   commerce_product: 0
+  commerce_product_taxonomy_filter: 0
   commerce_promotion: 0
   commerce_shipping: 0
   commerce_store: 0
@@ -57,6 +58,7 @@ module:
   shortcut: 0
   soap_endpoint: 0
   state_machine: 0
+  stm: 0
   symfony_mailer: 0
   system: 0
   taxonomy: 0

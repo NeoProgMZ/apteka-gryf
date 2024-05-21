@@ -1,0 +1,25 @@
+uuid: e62dcf7b-4b15-40be-9bd8-fbdd8e6a7134
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:06a14cbb-3363-43f0-92a2-99c6056a5249'
+  module:
+    - block_content
+  theme:
+    - pharmacy
+id: pharmacy_topcontactlink
+theme: pharmacy
+region: secondary_menu
+weight: -9
+provider: null
+plugin: 'block_content:06a14cbb-3363-43f0-92a2-99c6056a5249'
+settings:
+  id: 'block_content:06a14cbb-3363-43f0-92a2-99c6056a5249'
+  label: 'Top contact link'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

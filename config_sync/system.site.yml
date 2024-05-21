@@ -2,9 +2,9 @@ _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
 uuid: 9bda9320-9611-4a0a-8ec0-1ee0eb5d18ec
-name: 'Apteka Pod Gryfem'
+name: 'Pod Gryfem'
 mail: admin@example.com
-slogan: ''
+slogan: 'Apteka Internetowa'
 page:
   403: ''
   404: ''

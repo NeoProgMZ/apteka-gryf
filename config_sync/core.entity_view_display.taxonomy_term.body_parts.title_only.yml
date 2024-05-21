@@ -1,0 +1,16 @@
+uuid: e66f7a9b-9ffc-4e24-a16c-7a9987b0f131
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.title_only
+    - field.field.taxonomy_term.body_parts.field_code
+    - taxonomy.vocabulary.body_parts
+id: taxonomy_term.body_parts.title_only
+targetEntityType: taxonomy_term
+bundle: body_parts
+mode: title_only
+content: {  }
+hidden:
+  description: true
+  field_code: true

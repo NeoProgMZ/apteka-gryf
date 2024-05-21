@@ -1,0 +1,30 @@
+uuid: c9c4d2b0-77a8-4444-b9c2-0b3743257b05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.body_parts.field_code
+    - taxonomy.vocabulary.body_parts
+  module:
+    - text
+id: taxonomy_term.body_parts.default
+targetEntityType: taxonomy_term
+bundle: body_parts
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_code:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

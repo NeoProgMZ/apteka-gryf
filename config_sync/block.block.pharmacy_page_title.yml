@@ -1,6 +1,6 @@
 uuid: 91dc93a3-ca39-4676-a261-7326e9fd272f
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - pharmacy

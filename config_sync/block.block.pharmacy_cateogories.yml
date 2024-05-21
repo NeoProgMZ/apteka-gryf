@@ -1,0 +1,25 @@
+uuid: 5fc9c6fa-fe98-4475-a855-8aec429d6d32
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.cateogories
+  module:
+    - system
+  theme:
+    - pharmacy
+id: pharmacy_cateogories
+theme: pharmacy
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:cateogories'
+settings:
+  id: 'system_menu_block:cateogories'
+  label: Cateogories
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

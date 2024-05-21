@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - commerce_product.commerce_product_type.default
+    - field.field.commerce_product.default.field_body_parts
     - field.field.commerce_product.default.field_description
     - field.field.commerce_product.default.field_image
     - field.field.commerce_product.default.field_perscription_required
@@ -23,6 +24,14 @@ targetEntityType: commerce_product
 bundle: default
 mode: default
 content:
+  field_body_parts:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_description:
     type: text_summary_or_trimmed
     label: above
