@@ -2,13 +2,29 @@
  * @file
  * Subtheme specific CSS.
  */
-.block-menu.navigation.menu--cateogories ul.nav {
-    flex-direction: column;
+
+#page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.region-secondary-menu {
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+.row.region-secondary-menu>* {
+    width: fit-content;
+    flex-grow: 1;
+}
+
+#block-pharmacy-account-menu .nav {
+    justify-content: end;
 }
 
 a.navbar-brand {
     display: grid;
-    grid-gap: 1rem;
+    column-gap: 1rem;
 }
 
 a.navbar-brand img {
@@ -26,4 +42,8 @@ a.navbar-brand span.header-site-name {
 
 a.navbar-brand span.site-name-slogan {
     grid-row: 2/2;
+}
+
+.block-menu.navigation.menu--cateogories ul.nav {
+    flex-direction: column;
 }
