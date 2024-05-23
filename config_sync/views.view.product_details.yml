@@ -304,7 +304,18 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'No matching products found {{ title }}'
+          tokenize: true
       sorts: {  }
       arguments:
         product_id:
@@ -1056,6 +1067,7 @@ display:
         options:
           offset: 0
           items_per_page: 6
+      empty: {  }
       arguments: {  }
       filters:
         status:
@@ -1112,6 +1124,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         query: true
         title: false
         css_class: false
@@ -1813,6 +1826,7 @@ display:
         options:
           offset: 0
           items_per_page: 6
+      empty: {  }
       arguments: {  }
       filters:
         status:
@@ -1869,6 +1883,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         css_class: false
         pager: false
@@ -2569,6 +2584,7 @@ display:
         options:
           offset: 0
           items_per_page: 6
+      empty: {  }
       arguments: {  }
       filters:
         status:
@@ -2625,6 +2641,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         query: true
         title: false
         css_class: false
@@ -3326,6 +3343,7 @@ display:
         options:
           offset: 0
           items_per_page: 6
+      empty: {  }
       arguments: {  }
       filters:
         status:
@@ -3382,6 +3400,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         query: true
         title: false
         css_class: false
@@ -3944,6 +3963,7 @@ display:
         options:
           offset: 0
           items_per_page: 1
+      empty: {  }
       arguments:
         product_id:
           id: product_id
@@ -4017,6 +4037,7 @@ display:
           separator: ''
           hide_empty: false
       defaults:
+        empty: false
         pager: false
         group_by: true
         style: false
@@ -4797,6 +4818,18 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: 'No results message'
+          plugin_id: text_custom
+          empty: true
+          content: 'No matching products found'
+          tokenize: false
       arguments: {  }
       filters:
         status:
@@ -4810,11 +4843,57 @@ display:
           group: 1
           expose:
             operator: ''
+        title:
+          id: title
+          table: commerce_product_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_product
+          entity_field: title
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         pager: false
         relationships: false
@@ -4851,6 +4930,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
       tags:
         - 'config:field.storage.commerce_product_variation.field_bestseller'
@@ -5666,7 +5746,18 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: 'No results message'
+          plugin_id: text_custom
+          empty: true
+          content: 'No products found'
+          tokenize: false
       arguments:
         term_commerce_product_tid_depth:
           id: term_commerce_product_tid_depth

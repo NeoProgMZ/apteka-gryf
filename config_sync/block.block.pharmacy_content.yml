@@ -11,7 +11,7 @@ _core:
 id: pharmacy_content
 theme: pharmacy
 region: content
-weight: -4
+weight: -9
 provider: null
 plugin: system_main_block
 settings:

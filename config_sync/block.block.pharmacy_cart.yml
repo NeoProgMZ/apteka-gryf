@@ -1,0 +1,22 @@
+uuid: c7d9d48b-aae4-4473-8170-48f5c71b66c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_cart
+  theme:
+    - pharmacy
+id: pharmacy_cart
+theme: pharmacy
+region: header
+weight: -7
+provider: null
+plugin: commerce_cart
+settings:
+  id: commerce_cart
+  label: Cart
+  label_display: '0'
+  provider: commerce_cart
+  dropdown: true
+  show_if_empty: true
+visibility: {  }

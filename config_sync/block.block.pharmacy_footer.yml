@@ -1,0 +1,25 @@
+uuid: 58e625e5-47c7-4bc7-95ef-fa7fae8a75c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - pharmacy
+id: pharmacy_footer
+theme: pharmacy
+region: footer_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -11,7 +11,7 @@ _core:
 id: pharmacy_search_form_wide
 theme: pharmacy
 region: top_header_form
-weight: -7
+weight: -10
 provider: null
 plugin: search_form_block
 settings:

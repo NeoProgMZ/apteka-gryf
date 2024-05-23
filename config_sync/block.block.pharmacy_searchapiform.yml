@@ -1,0 +1,37 @@
+uuid: eb4f1e69-25b0-4172-b8e4-5831947b78bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_classes
+    - search_api_block
+    - system
+  theme:
+    - pharmacy
+third_party_settings:
+  block_classes:
+    block_class: header-search-wrapper
+id: pharmacy_searchapiform
+theme: pharmacy
+region: header
+weight: -10
+provider: null
+plugin: search_api_form_block
+settings:
+  id: search_api_form_block
+  label: 'Search API form'
+  label_display: '0'
+  provider: search_api_block
+  context_mapping: {  }
+  action_url: /catalog
+  input_name: search
+  input_placeholder: 'Search products'
+  submit_value: ''
+  pass_get_params: 0
+  input_label: ''
+  input_label_visibility: invisible
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /catalog

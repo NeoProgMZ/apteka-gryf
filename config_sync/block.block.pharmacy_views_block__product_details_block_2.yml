@@ -11,8 +11,8 @@ dependencies:
     - pharmacy
 id: pharmacy_views_block__product_details_block_2
 theme: pharmacy
-region: content
-weight: -2
+region: featured_bottom_first
+weight: -11
 provider: null
 plugin: 'views_block:product_details-block_2'
 settings:

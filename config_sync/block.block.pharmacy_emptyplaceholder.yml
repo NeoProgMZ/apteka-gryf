@@ -1,0 +1,30 @@
+uuid: b8f3fb87-dbe6-4c1e-9218-664a6c484b81
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d0cddb9d-fcbc-4911-b82b-14afb6eb6eaa'
+  module:
+    - block_content
+    - system
+  theme:
+    - pharmacy
+id: pharmacy_emptyplaceholder
+theme: pharmacy
+region: header
+weight: -9
+provider: null
+plugin: 'block_content:d0cddb9d-fcbc-4911-b82b-14afb6eb6eaa'
+settings:
+  id: 'block_content:d0cddb9d-fcbc-4911-b82b-14afb6eb6eaa'
+  label: 'Empty placeholder'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /catalog

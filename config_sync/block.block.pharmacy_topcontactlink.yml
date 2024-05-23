@@ -5,13 +5,17 @@ dependencies:
   content:
     - 'block_content:basic:06a14cbb-3363-43f0-92a2-99c6056a5249'
   module:
+    - block_classes
     - block_content
   theme:
     - pharmacy
+third_party_settings:
+  block_classes:
+    block_class: nav
 id: pharmacy_topcontactlink
 theme: pharmacy
 region: secondary_menu
-weight: -9
+weight: -10
 provider: null
 plugin: 'block_content:06a14cbb-3363-43f0-92a2-99c6056a5249'
 settings:
