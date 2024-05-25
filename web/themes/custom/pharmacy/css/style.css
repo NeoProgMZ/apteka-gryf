@@ -3,9 +3,8 @@
  * Subtheme specific CSS.
  */
 
-#page-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+#page .row {
+    margin: 0px;
 }
 
 .region-secondary-menu {
@@ -22,18 +21,26 @@
     justify-content: end;
 }
 
-.header #navbar-main {
-    display: grid;
-    grid-template-columns: 2fr 5fr 1fr;
+.header #navbar-top {
+    background-color: #f3f3f3;
+    color: #777;
 }
 
-.header #navbar-main>*:last-child {
-    grid-column: 1 / span 3;
+#page .header #navbar-main {
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.header #navbar-main .navbar-collapse {
+    flex-direction: row-reverse;
+    flex-basis: 100%;
+    order: 5;
 }
 
 a.navbar-brand {
     display: grid;
     column-gap: 1rem;
+    order: 2;
 }
 
 a.navbar-brand img {
@@ -53,6 +60,11 @@ a.navbar-brand span.site-name-slogan {
     grid-row: 2/2;
 }
 
+.header-search-wrapper {
+    order: 3;
+    flex-grow: 1;
+}
+
 .header-search-wrapper form {
     display: flex;
 }
@@ -61,10 +73,50 @@ a.navbar-brand span.site-name-slogan {
     flex-grow: 1;
 }
 
+.block-commerce-cart {
+    order: 4;
+}
+
 .block-menu.navigation.menu--cateogories ul.nav {
     flex-direction: column;
 }
 
 .site-footer {
     background-color: #fff;
+}
+
+#page .block.block-views,
+#page .block.block-views h2,
+#page .block.block-views .view-content.row {
+    margin-bottom: 30px;
+}
+
+#page .header,
+#page .block.block-views,
+#page .block.block-views h2 {
+    border-bottom: 1px solid #97ae1a;
+    padding-bottom: 15px;
+}
+
+#page .header #navbar-main,
+#page .header .navbar .region-secondary-menu {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#page .block.block-views h2 {
+    color: #444;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#page .block.block-views .view-content.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.region-primary-menu {
+    width: 100%;
 }
