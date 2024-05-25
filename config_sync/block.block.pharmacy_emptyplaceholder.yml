@@ -5,10 +5,14 @@ dependencies:
   content:
     - 'block_content:basic:d0cddb9d-fcbc-4911-b82b-14afb6eb6eaa'
   module:
+    - block_classes
     - block_content
     - system
   theme:
     - pharmacy
+third_party_settings:
+  block_classes:
+    block_class: header-search-wrapper
 id: pharmacy_emptyplaceholder
 theme: pharmacy
 region: header

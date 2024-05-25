@@ -347,7 +347,7 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: 'card col-4'
+          row_class: card
           default_row_class: false
       row:
         type: fields

@@ -13,7 +13,7 @@ _core:
 id: pharmacy_main_menu
 theme: pharmacy
 region: primary_menu
-weight: -6
+weight: -11
 provider: null
 plugin: 'system_menu_block:main'
 settings:
