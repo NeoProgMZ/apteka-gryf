@@ -38,3 +38,4 @@ content:
     region: content
 hidden:
   field_customer_phone: true
+  search_api_excerpt: true

@@ -1,0 +1,47 @@
+label: Płatności
+display:
+  default:
+    display_title: Domyślny
+    display_options:
+      title: Płatności
+      fields:
+        amount__number:
+          label: Płatność
+          separator: ', '
+        refunded_amount__number:
+          separator: ', '
+        avs_response_code_label:
+          separator: ', '
+        avs_response_code:
+          separator: ', '
+        state:
+          label: Stan
+          separator: ', '
+        payment_gateway:
+          separator: ', '
+        authorized:
+          separator: ', '
+        completed:
+          label: Zakończone
+          separator: ', '
+        remote_id:
+          label: 'Zdalne ID'
+          separator: ', '
+        operations:
+          label: Operacje
+      exposed_form:
+        options:
+          submit_button: Zastosuj
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      arguments:
+        order_id:
+          exception:
+            title: Wszystko
+  page_1:
+    display_title: Strona
+    display_options:
+      menu:
+        title: Płatności

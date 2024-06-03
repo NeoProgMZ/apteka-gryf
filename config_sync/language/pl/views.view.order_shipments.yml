@@ -1,0 +1,33 @@
+display:
+  default:
+    display_title: Główny
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Zastosuj
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      fields:
+        title:
+          label: Tytuł
+          separator: ', '
+        shipping_method:
+          separator: ', '
+        amount__number:
+          label: Ilość
+          separator: ', '
+        tracking_code:
+          separator: ', '
+        state:
+          label: Stan
+          separator: ', '
+        operations:
+          label: 'Odnośniki do czynności'
+      arguments:
+        order_id:
+          exception:
+            title: Wszystko
+  page_1:
+    display_title: Strona

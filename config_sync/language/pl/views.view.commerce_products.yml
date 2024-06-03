@@ -1,0 +1,56 @@
+label: Produkty
+display:
+  default:
+    display_title: Główny
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtr
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options_all_label: '- Wszystko -'
+            offset_label: Przesunięcie
+          tags:
+            previous: '‹ poprzednia'
+            next: 'następna ›'
+            first: '« pierwsza'
+            last: 'ostatnia »'
+      fields:
+        commerce_product_bulk_form:
+          action_title: 'Z wyborem'
+        title:
+          label: Tytuł
+          separator: ', '
+        type:
+          label: Typ
+          separator: ', '
+        status:
+          label: Status
+          settings:
+            format_custom_true: Opublikowane
+            format_custom_false: Nieopublikowany
+          separator: ', '
+        changed:
+          label: Uaktualniono
+          separator: ', '
+        operations:
+          label: Operacje
+      filters:
+        type:
+          expose:
+            label: Typ
+        title:
+          expose:
+            label: Tytuł
+      title: Produkty
+      empty:
+        area_text_custom:
+          content: 'Brak dostępnych produktów'
+  page_1:
+    display_title: Strona

@@ -1,0 +1,45 @@
+display:
+  default:
+    display_title: Główny
+    display_options:
+      fields:
+        commerce_store_bulk_form:
+          action_title: 'Z wyborem'
+        is_default:
+          label: Domyślny
+          separator: ', '
+        name:
+          label: Nazwa
+          separator: ', '
+        changed:
+          label: Uaktualniono
+          separator: ', '
+        type:
+          label: Typ
+          separator: ', '
+        operations:
+          label: Operacje
+      pager:
+        options:
+          tags:
+            next: 'następna ›'
+            previous: '‹ poprzednia'
+            first: '« pierwsza'
+            last: 'ostatnia »'
+          expose:
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options_all_label: '- Wszystko -'
+            offset_label: Przesunięcie
+      exposed_form:
+        options:
+          submit_button: Zastosuj
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      filters:
+        type:
+          expose:
+            label: Typ
+  page_1:
+    display_title: Strona

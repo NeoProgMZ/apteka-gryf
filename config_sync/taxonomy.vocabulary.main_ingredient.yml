@@ -1,0 +1,8 @@
+uuid: 48b1d989-eebd-4381-8322-179ea7f31ea2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Main ingredient'
+vid: main_ingredient
+description: ''
+weight: 0

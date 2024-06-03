@@ -7,11 +7,13 @@ dependencies:
     - field.field.commerce_product.default.field_body_parts
     - field.field.commerce_product.default.field_description
     - field.field.commerce_product.default.field_image
+    - field.field.commerce_product.default.field_main_ingredient
     - field.field.commerce_product.default.field_perscription_required
     - field.field.commerce_product.default.field_product_pkwiu
     - field.field.commerce_product.default.field_product_producer
     - field.field.commerce_product.default.field_product_type
     - field.field.commerce_product.default.field_product_unit
+    - field.field.commerce_product.default.field_tags
     - field.field.commerce_product.default.field_vat
   module:
     - commerce_product
@@ -30,7 +32,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_description:
     type: text_summary_or_trimmed
@@ -51,13 +53,21 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_product_producer:
+  field_main_ingredient:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_product_producer:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_product_type:
     type: entity_reference_label
@@ -73,7 +83,15 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 5
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
     region: content
   variations:
     type: commerce_add_to_cart
@@ -81,13 +99,15 @@ content:
     settings:
       combine: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
 hidden:
   created: true
   field_perscription_required: true
   field_product_pkwiu: true
   field_vat: true
+  langcode: true
+  search_api_excerpt: true
   stores: true
   title: true
   uid: true

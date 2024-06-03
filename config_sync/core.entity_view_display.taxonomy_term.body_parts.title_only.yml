@@ -14,3 +14,5 @@ content: {  }
 hidden:
   description: true
   field_code: true
+  langcode: true
+  search_api_excerpt: true

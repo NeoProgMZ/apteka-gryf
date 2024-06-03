@@ -1,0 +1,45 @@
+label: Kupony
+display:
+  default:
+    display_title: Główny
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtr
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      pager:
+        options:
+          tags:
+            previous: ‹‹
+            next: ››
+            first: '« Pierwsza'
+            last: 'Ostatnia »'
+          expose:
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options_all_label: '- Wszystko -'
+            offset_label: Przesunięcie
+      fields:
+        code:
+          label: Kod
+          separator: ', '
+        usage_limit:
+          label: Użycie
+          separator: ', '
+        usage_limit_customer:
+          separator: ', '
+        operations:
+          label: Operacje
+      filters:
+        code:
+          expose:
+            label: Kod
+      title: Kupony
+      arguments:
+        promotion_id:
+          exception:
+            title: Wszystko
+  page_1:
+    display_title: Strona

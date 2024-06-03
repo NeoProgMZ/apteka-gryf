@@ -2,7 +2,7 @@ uuid: 305faed9-56d6-4740-b5b9-3ac04e36b8d2
 langcode: en
 status: true
 dependencies: {  }
-name: 'Polska Klasyfikacja Wurobów i Usług'
+name: 'Polska Klasyfikacja Wyrobów i Usług'
 vid: pkwiu
 description: ''
 weight: 0

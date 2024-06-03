@@ -104,7 +104,9 @@ hidden:
   field_internet_offer_id: true
   field_pharmacy_display_id: true
   field_pharmacy_id: true
+  langcode: true
   product_id: true
+  search_api_excerpt: true
   sku: true
   title: true
   weight: true

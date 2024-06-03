@@ -1,0 +1,29 @@
+display:
+  default:
+    display_title: Główny
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Zastosuj
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      fields:
+        purchased_entity:
+          label: Element
+          separator: ', '
+        unit_price__number:
+          label: Cena
+          separator: ', '
+        edit_quantity:
+          label: Ilość
+        remove_button:
+          label: Usuń
+        total_price__number:
+          label: Razem
+          separator: ', '
+      arguments:
+        order_id:
+          exception:
+            title: Wszystko

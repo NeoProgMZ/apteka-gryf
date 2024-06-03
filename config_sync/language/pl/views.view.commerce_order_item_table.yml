@@ -1,0 +1,28 @@
+display:
+  default:
+    display_title: Główny
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Zastosuj
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      fields:
+        title:
+          label: Tytuł
+          separator: ', '
+        unit_price__number:
+          label: 'Cena jednostkowa'
+          separator: ', '
+        quantity:
+          label: Ilość
+          separator: ', '
+        total_price__number:
+          label: 'Cena całkowita'
+          separator: ', '
+      arguments:
+        order_item_id:
+          exception:
+            title: Wszystko
