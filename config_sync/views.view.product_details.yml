@@ -17,6 +17,10 @@ dependencies:
     - image.style.wide
     - system.menu.main
     - taxonomy.vocabulary.body_parts
+    - taxonomy.vocabulary.main_ingredient
+    - taxonomy.vocabulary.producers
+    - taxonomy.vocabulary.product_type
+    - taxonomy.vocabulary.tags
   module:
     - commerce
     - commerce_price
@@ -291,8 +295,8 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
-          reset_button: false
+          submit_button: Search
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -4843,29 +4847,444 @@ display:
           group: 1
           expose:
             operator: ''
-        title:
-          id: title
+        term_commerce_product_tid_depth:
+          id: term_commerce_product_tid_depth
           table: commerce_product_field_data
-          field: title
+          field: term_commerce_product_tid_depth
+          relationship: none
+          group_type: group
+          admin_label: 'Body parts user filter'
+          entity_type: commerce_product
+          plugin_id: commerce_product_taxonomy_index_tid_depth
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: term_commerce_product_tid_depth_op
+            label: 'Body parts'
+            description: ''
+            use_operator: false
+            operator: term_commerce_product_tid_depth_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: body_parts
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: 0
+          type: select
+          limit: true
+          vid: body_parts
+          hierarchy: 1
+          error_message: 1
+          depth: '4'
+        term_commerce_product_tid_depth_1:
+          id: term_commerce_product_tid_depth_1
+          table: commerce_product_field_data
+          field: term_commerce_product_tid_depth
+          relationship: none
+          group_type: group
+          admin_label: 'Tags user filter'
+          entity_type: commerce_product
+          plugin_id: commerce_product_taxonomy_index_tid_depth
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: term_commerce_product_tid_depth_1_op
+            label: Applications
+            description: ''
+            use_operator: false
+            operator: term_commerce_product_tid_depth_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: applications
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: 0
+          type: select
+          limit: true
+          vid: tags
+          hierarchy: 1
+          error_message: 1
+          depth: '5'
+        field_main_ingredient_target_id:
+          id: field_main_ingredient_target_id
+          table: commerce_product__field_main_ingredient
+          field: field_main_ingredient_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: commerce_product
-          entity_field: title
-          plugin_id: string
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_main_ingredient_target_id_op
+            label: 'Main ingredient'
+            description: ''
+            use_operator: false
+            operator: field_main_ingredient_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: main_ingredient
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: main_ingredient
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+        field_product_producer_target_id:
+          id: field_product_producer_target_id
+          table: commerce_product__field_product_producer
+          field: field_product_producer_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_product_producer_target_id_op
+            label: Producer
+            description: ''
+            use_operator: false
+            operator: field_product_producer_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: producers
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: producers
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+        field_product_type_target_id:
+          id: field_product_type_target_id
+          table: commerce_product__field_product_type
+          field: field_product_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_product_type_target_id_op
+            label: 'Product type'
+            description: ''
+            use_operator: false
+            operator: field_product_type_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: product_type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: product_type
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_bestseller_value:
+          id: field_bestseller_value
+          table: commerce_product_variation__field_bestseller
+          field: field_bestseller_value
+          relationship: variations_target_id
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: Bestsellers
+            description: ''
+            use_operator: false
+            operator: field_bestseller_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: bestsellers
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_novelty_value:
+          id: field_novelty_value
+          table: commerce_product_variation__field_novelty
+          field: field_novelty_value
+          relationship: variations_target_id
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: Novelties
+            description: ''
+            use_operator: false
+            operator: field_novelty_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: novelties
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_promoted_value:
+          id: field_promoted_value
+          table: commerce_product_variation__field_promoted
+          field: field_promoted_value
+          relationship: variations_target_id
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Promoted products'
+            description: ''
+            use_operator: false
+            operator: field_promoted_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: promoted_products
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_quality_badge_value:
+          id: field_quality_badge_value
+          table: commerce_product_variation__field_quality_badge
+          field: field_quality_badge_value
+          relationship: variations_target_id
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Quality products'
+            description: ''
+            use_operator: false
+            operator: field_quality_badge_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: quality_products
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: combine
           operator: word
           value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: title_op
-            label: ''
+            operator_id: combine_op
+            label: 'Product name'
             description: ''
             use_operator: false
-            operator: title_op
+            operator: combine_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: search
+            identifier: product_name
             required: false
             remember: false
             multiple: false
@@ -4888,6 +5307,9 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          fields:
+            title: title
+            title_1: title_1
       filter_groups:
         operator: AND
         groups:
@@ -4920,7 +5342,8 @@ display:
         type: normal
         title: Products
         description: ''
-        weight: 0
+        weight: -42
+        enabled: false
         expanded: false
         menu_name: main
         parent: ''
@@ -4932,6 +5355,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
       tags:
         - 'config:field.storage.commerce_product_variation.field_bestseller'
         - 'config:field.storage.commerce_product_variation.field_novelty'

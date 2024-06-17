@@ -97,3 +97,9 @@ definitions:
     weight: 59
     menu_name: account
     enabled: true
+  commerce_base__front_page:
+    weight: -43
+    menu_name: main
+    parent: ''
+    expanded: false
+    enabled: false

@@ -1,8 +1,8 @@
-uuid: 209f5142-b029-4653-91b9-ceeeb994ee5d
+uuid: 07b99668-9dca-4e93-b193-1044b0438d7e
 langcode: en
 status: true
 dependencies: {  }
 id: cateogories
-label: Cateogories
+label: Categories
 description: ''
 locked: false

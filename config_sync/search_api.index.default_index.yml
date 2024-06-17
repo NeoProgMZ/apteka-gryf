@@ -1,9 +1,7 @@
 uuid: ce13107d-4aa5-4549-a75b-23f00bcd1e32
 langcode: en
-status: true
+status: false
 dependencies:
-  config:
-    - search_api.server.default_server
   module:
     - search_api
     - commerce_product
@@ -140,4 +138,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: default_server
+server: null
