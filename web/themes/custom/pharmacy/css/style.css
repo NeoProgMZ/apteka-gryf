@@ -37,6 +37,67 @@
     order: 5;
 }
 
+#block-pharmacy-main-menu>ul {
+    --middle-menu-padding: 0.8rem;
+    justify-content: space-between;
+}
+
+#block-pharmacy-main-menu>ul.clearfix::after {
+    display: none;
+}
+
+#block-pharmacy-main-menu ul li {
+    border-bottom: 1px solid #97ae1a;
+}
+
+#block-pharmacy-main-menu ul li a {
+    text-decoration: none;
+    color: var(--bs-nav-link-color);
+}
+
+#block-pharmacy-main-menu ul li a:hover {
+    color: var(--bs-nav-link-hover-color);
+}
+
+#block-pharmacy-main-menu>ul>li {
+    display: flex;
+    justify-content: center;
+}
+
+#block-pharmacy-main-menu>ul>li>ul.dropdown-menu {
+    top: 100%;
+    padding: var(--middle-menu-padding) 0 0;
+    border: none;
+    background: none;
+}
+
+#block-pharmacy-main-menu>ul>li>ul.dropdown-menu::after {
+    display: block;
+    height: var(--middle-menu-padding);
+    content: "";
+    width: 100%;
+    border-bottom: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+    border-radius: 0 0 var(--bs-dropdown-border-radius) var(--bs-dropdown-border-radius);
+}
+
+#block-pharmacy-main-menu>ul>li>ul.dropdown-menu::after,
+#block-pharmacy-main-menu>ul>li>ul.dropdown-menu>li {
+    background-color: var(--bs-dropdown-bg);
+    border-left: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+    border-right: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+}
+
+#block-pharmacy-main-menu>ul>li>ul.dropdown-menu>li:first-child {
+    border-top: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+    border-radius: var(--bs-dropdown-border-radius) var(--bs-dropdown-border-radius) 0 0;
+    padding-top: var(--middle-menu-padding);
+}
+
+#block-pharmacy-main-menu>ul>li>ul.dropdown-menu>li>ul.dropdown-menu {
+    border-radius: var(--bs-dropdown-border-radius);
+}
+
+
 a.navbar-brand {
     display: grid;
     column-gap: 1rem;

@@ -82,7 +82,7 @@ bootstrap_barrio_navbar_top_background: ''
 bootstrap_barrio_navbar_position: ''
 bootstrap_barrio_navbar_color: ''
 bootstrap_barrio_navbar_background: ''
-bootstrap_barrio_navbar_flyout: false
+bootstrap_barrio_navbar_flyout: true
 bootstrap_barrio_navbar_slide: false
 bootstrap_barrio_navbar_offcanvas: ''
 bootstrap_barrio_messages_widget: alerts
