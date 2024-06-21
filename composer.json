@@ -38,6 +38,7 @@
         "ext-curl": "*",
         "composer/installers": "^2.1",
         "cweagans/composer-patches": "^1.7",
+        "drupal/better_exposed_filters": "^7.0@beta",
         "drupal/block_classes": "^1.0",
         "drupal/bootstrap_barrio": "^5.5",
         "drupal/commerce": "^2.37",

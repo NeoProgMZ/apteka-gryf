@@ -47,12 +47,20 @@
 }
 
 #block-pharmacy-main-menu ul li {
-    border-bottom: 1px solid #97ae1a;
+    background-color: var(--bs-dropdown-bg);
+    border-bottom: 1px solid var(--bs-green-accent-color);
+}
+
+#block-pharmacy-main-menu ul li:hover {
+    background-color: var(--bs-dropdown-link-hover-bg);
+    border-bottom-width: 2px;
 }
 
 #block-pharmacy-main-menu ul li a {
     text-decoration: none;
     color: var(--bs-nav-link-color);
+    width: 100%;
+    display: inline-block;
 }
 
 #block-pharmacy-main-menu ul li a:hover {
@@ -82,7 +90,6 @@
 
 #block-pharmacy-main-menu>ul>li>ul.dropdown-menu::after,
 #block-pharmacy-main-menu>ul>li>ul.dropdown-menu>li {
-    background-color: var(--bs-dropdown-bg);
     border-left: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
     border-right: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
 }
@@ -114,23 +121,42 @@ a.navbar-brand span {
 }
 
 a.navbar-brand span.header-site-name {
-    grid-row: 1/1;
+    grid-row: 2/2;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    display: flex;
+    align-items: flex-start;
 }
 
 a.navbar-brand span.site-name-slogan {
-    grid-row: 2/2;
+    grid-row: 1/1;
+    display: flex !important;
+    align-items: flex-end;
 }
 
-.header-search-wrapper {
+#page .block.block-views.block-pharmacy-searchform {
     order: 3;
     flex-grow: 1;
+    margin: 0px;
 }
 
-.header-search-wrapper form {
+#page .block.block-views.block-pharmacy-searchform .view-content.row {
+    margin: 0px;
+    position: absolute;
     display: flex;
+    width: 90%;
+    padding: 10px;
+    background-color: var(--bs-dropdown-bg);
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    z-index: 9;
+    border-radius: var(--bs-border-radius);
 }
 
-.header-search-wrapper form .form-item-search {
+.block-pharmacy-searchform form>div>div {
+    margin: 0px !important;
+}
+
+.block-pharmacy-searchform form .form-item-product-name {
     flex-grow: 1;
 }
 
@@ -138,7 +164,7 @@ a.navbar-brand span.site-name-slogan {
     order: 4;
 }
 
-.block-menu.navigation.menu--cateogories ul.nav {
+.section .product-filters>form>div {
     flex-direction: column;
 }
 
@@ -153,9 +179,9 @@ a.navbar-brand span.site-name-slogan {
 }
 
 #page .header,
-#page .block.block-views,
-#page .block.block-views h2 {
-    border-bottom: 1px solid #97ae1a;
+#page .featured-bottom .block.block-views,
+#page .featured-bottom .block.block-views h2 {
+    border-bottom: 1px solid var(--bs-green-accent-color);
     padding-bottom: 15px;
 }
 

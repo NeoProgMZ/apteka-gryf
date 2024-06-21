@@ -2,3 +2,7 @@
  * @file
  * Subtheme specific CSS.
  */
+#page {
+    --bs-green-accent-color: #97ae1a;
+    --bs-dropdown-bg: #fff;
+}

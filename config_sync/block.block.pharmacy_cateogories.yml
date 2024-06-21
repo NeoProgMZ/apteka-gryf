@@ -1,11 +1,10 @@
 uuid: 80199e63-4f6b-41f4-b898-34d6b2c394d5
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.cateogories
   module:
-    - block_classes
     - system
   theme:
     - pharmacy

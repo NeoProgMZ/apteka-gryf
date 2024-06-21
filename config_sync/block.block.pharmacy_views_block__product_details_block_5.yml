@@ -1,0 +1,33 @@
+uuid: 4c60a189-2e05-40ba-a7a1-0b94e0639685
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.product_details
+  module:
+    - block_classes
+    - system
+    - views
+  theme:
+    - pharmacy
+third_party_settings:
+  block_classes:
+    block_class: block-pharmacy-searchform
+id: pharmacy_views_block__product_details_block_5
+theme: pharmacy
+region: header
+weight: -10
+provider: null
+plugin: 'views_block:product_details-block_5'
+settings:
+  id: 'views_block:product_details-block_5'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /catalog

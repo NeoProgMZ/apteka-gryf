@@ -1,0 +1,32 @@
+uuid: 573b17d6-eb57-4011-86ce-c81f13d43ce7
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.product_details
+  module:
+    - block_classes
+    - system
+    - views
+  theme:
+    - pharmacy
+third_party_settings:
+  block_classes:
+    content_class: product-filters
+id: pharmacy_exposedformproduct_detailspage_2
+theme: pharmacy
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:product_details-page_2'
+settings:
+  id: 'views_exposed_filter_block:product_details-page_2'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: Filters
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

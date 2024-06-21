@@ -11,7 +11,7 @@ _core:
 id: pharmacy_site_branding
 theme: pharmacy
 region: header
-weight: -11
+weight: -12
 provider: null
 plugin: system_branding_block
 settings:

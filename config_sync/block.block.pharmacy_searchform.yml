@@ -1,0 +1,26 @@
+uuid: 363c69e1-2ae9-419d-851a-fbd66bb9f118
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+    - system
+  theme:
+    - pharmacy
+id: pharmacy_searchform
+theme: pharmacy
+region: header
+weight: -8
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /catalog

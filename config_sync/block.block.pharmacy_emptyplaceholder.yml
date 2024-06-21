@@ -16,7 +16,7 @@ third_party_settings:
 id: pharmacy_emptyplaceholder
 theme: pharmacy
 region: header
-weight: -9
+weight: -11
 provider: null
 plugin: 'block_content:d0cddb9d-fcbc-4911-b82b-14afb6eb6eaa'
 settings:
