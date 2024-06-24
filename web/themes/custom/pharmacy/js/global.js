@@ -9,7 +9,6 @@
 
     Drupal.behaviors.bootstrap_barrio = {
         attach: function (context, settings) {
-
             var position = window.scrollY;
             window.addEventListener('scroll', function () {
                 if (window.scrollY > 50) {
@@ -32,8 +31,18 @@
     };
 
     Drupal.behaviors.pharmacy = {
+        // eventListeners: {},
         attach: function (context, settings) {
-
+            // window.console.log(eventListeners[context]);
+            // if ()
+            if (context instanceof Document || context instanceof Element) {
+                // @BUG this is duplicated!
+                eventListeners[context] = context.querySelector('[id^="edit-submit-product-details"]')?.addEventListener("click", function (event) {
+                    event.stopPropagation
+                    let searchString = event.target.closest("form").querySelector('input[type="text"]').value;
+                    window.location.href = "/catalog?product_name=" + searchString;
+                });
+            }
         }
     };
 

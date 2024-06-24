@@ -156,6 +156,55 @@ a.navbar-brand span.site-name-slogan {
     margin: 0px !important;
 }
 
+.block-pharmacy-searchform form {
+    --bs-round-border-radius: 1.625rem;
+}
+
+.block-pharmacy-searchform form [data-drupal-selector="edit-actions"] {
+    display: flex;
+}
+
+.block-pharmacy-searchform form input[type="text"] {
+    border-right: 0px none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: var(--bs-round-border-radius);
+    border-bottom-left-radius: var(--bs-round-border-radius);
+    margin-left: 0px;
+}
+
+.block-pharmacy-searchform form [data-drupal-selector="edit-actions"] button[type="submit"] {
+    order: 2;
+    border-top-left-radius: 0;
+    border-top-right-radius: var(--bs-round-border-radius);
+    border-bottom-right-radius: var(--bs-round-border-radius);
+    border-bottom-left-radius: 0;
+    background-color: var(--bs-green-accent-color);
+    border: 0px none;
+    font-size: 0px;
+}
+
+.block-pharmacy-searchform form [data-drupal-selector="edit-actions"] button[type="submit"]::before {
+    background-image: url('data:image/svg+xml,<svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/></svg>');
+    line-height: var(--bs-btn-line-height);
+    font-size: var(--bs-btn-font-size);
+    background-position: center;
+}
+
+.block-pharmacy-searchform form [data-drupal-selector="edit-actions"] button[name="reset"] {
+    order: 1;
+    font-size: var(--bs-btn-font-size);
+    background: none;
+    border-left: 0px none;
+    border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-gray-400);
+    border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-gray-400);
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-gray-400);
+    color: var(--bs-navbar-color);
+    font-weight: bold;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .block-pharmacy-searchform form .form-item-product-name {
     flex-grow: 1;
 }
