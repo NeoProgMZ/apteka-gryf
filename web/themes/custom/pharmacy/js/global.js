@@ -3,7 +3,7 @@
  * Global utilities.
  *
  */
-(function (Drupal) {
+(function ($, Drupal, once) {
 
     'use strict';
 
@@ -33,17 +33,19 @@
     Drupal.behaviors.pharmacy = {
         // eventListeners: {},
         attach: function (context, settings) {
-            // window.console.log(eventListeners[context]);
-            // if ()
-            if (context instanceof Document || context instanceof Element) {
-                // @BUG this is duplicated!
-                eventListeners[context] = context.querySelector('[id^="edit-submit-product-details"]')?.addEventListener("click", function (event) {
-                    event.stopPropagation
+            once(
+                'static-submit',
+                '#views-exposed-form-product-details-block-5 [id^="edit-submit-product-details"]',
+                context
+            ).forEach(function (element) {
+                element.addEventListener("click", function (event) {
+                    event.stopPropagation;
+                    event.preventDefault();
                     let searchString = event.target.closest("form").querySelector('input[type="text"]').value;
                     window.location.href = "/catalog?product_name=" + searchString;
                 });
-            }
+            });
         }
     };
 
-})(Drupal);
+})(jQuery, Drupal, once);

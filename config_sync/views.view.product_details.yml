@@ -4216,7 +4216,7 @@ display:
         options:
           submit_button: Search
           reset_button: true
-          reset_button_label: Reset
+          reset_button_label: X
           exposed_sorts_label: 'Sort by'
           expose_sort_order: false
           sort_asc_label: Asc
@@ -4225,7 +4225,7 @@ display:
           text_input_required_format: basic_html
           bef:
             general:
-              autosubmit: false
+              autosubmit: true
               autosubmit_exclude_textfield: false
               autosubmit_textfield_delay: 500
               autosubmit_hide: false
@@ -4285,7 +4285,7 @@ display:
               content_editor: '0'
               administrator: '0'
               customer: '0'
-            placeholder: 'Search by name'
+            placeholder: 'Search products by name'
           is_grouped: false
           group_info:
             label: ''
@@ -5871,6 +5871,19 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
+              field_tags_target_id:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: true
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
       empty:
         area_text_custom:
           id: area_text_custom
@@ -5902,9 +5915,9 @@ display:
           field: combine
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Title search'
           plugin_id: combine
-          operator: word
+          operator: contains
           value: ''
           group: 1
           exposed: true
@@ -6373,6 +6386,7 @@ display:
         arguments: false
         filters: false
         filter_groups: false
+        header: false
       relationships:
         variations_target_id:
           id: variations_target_id
@@ -6386,6 +6400,20 @@ display:
           plugin_id: standard
           required: true
       display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'Test header {{name}}'
+            format: basic_html
+          tokenize: true
       exposed_block: true
       display_extenders: {  }
       path: catalog

@@ -134,6 +134,7 @@ a.navbar-brand span.site-name-slogan {
     align-items: flex-end;
 }
 
+#page #block-pharmacy-emptyplaceholder,
 #page .block.block-views.block-pharmacy-searchform {
     order: 3;
     flex-grow: 1;
