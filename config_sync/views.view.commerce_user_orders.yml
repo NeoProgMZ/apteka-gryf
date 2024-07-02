@@ -70,6 +70,7 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+          pagination_heading_level: h4
       style:
         type: table
         options:
@@ -562,7 +563,8 @@ display:
           not: false
           entity_type: commerce_order
           entity_field: uid
-          plugin_id: numeric
+          plugin_id: entity_target_id
+          target_entity_type_id: user
       display_extenders: {  }
     cache_metadata:
       max-age: -1

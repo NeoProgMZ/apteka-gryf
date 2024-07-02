@@ -5808,6 +5808,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          pagination_heading_level: h4
       exposed_form:
         type: bef
         options:
@@ -5846,7 +5847,7 @@ display:
                   rewrite:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
-                  collapsible: true
+                  collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                 select_all_none: false
@@ -5859,7 +5860,7 @@ display:
                   rewrite:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
-                  collapsible: true
+                  collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                 select_all_none: false
@@ -5935,19 +5936,6 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
-              field_tags_target_id:
-                plugin_id: bef
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: ''
-                    filter_rewrite_values_key: false
-                  collapsible: true
-                  collapsible_disable_automatic_open: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
       empty:
         area_text_custom:
           id: area_text_custom

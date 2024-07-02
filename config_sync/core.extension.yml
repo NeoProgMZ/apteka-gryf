@@ -59,7 +59,6 @@ module:
   phone_international: 0
   physical: 0
   profile: 0
-  search: 0
   search_api: 0
   shortcut: 0
   soap_endpoint: 0
@@ -71,7 +70,6 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  tour: 0
   update: 0
   user: 0
   views_ui: 0

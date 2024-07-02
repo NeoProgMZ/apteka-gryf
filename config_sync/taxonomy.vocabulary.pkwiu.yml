@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Polska Klasyfikacja Wyrobów i Usług'
 vid: pkwiu
-description: ''
+description: null
 weight: 0
+new_revision: false

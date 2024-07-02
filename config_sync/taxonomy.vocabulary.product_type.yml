@@ -6,3 +6,4 @@ name: 'Product type'
 vid: product_type
 description: 'Available product types'
 weight: 0
+new_revision: false

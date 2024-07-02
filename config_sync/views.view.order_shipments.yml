@@ -553,7 +553,8 @@ display:
           not: false
           entity_type: commerce_shipment
           entity_field: order_id
-          plugin_id: numeric
+          plugin_id: entity_target_id
+          target_entity_type_id: commerce_order
       display_extenders: {  }
     cache_metadata:
       max-age: -1
