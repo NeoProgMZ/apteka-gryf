@@ -1,8 +1,0 @@
-uuid: e4c58534-1adf-452f-b620-aff91fd65e23
-langcode: en
-status: true
-dependencies: {  }
-name: 'Product units'
-vid: product_units
-description: ''
-weight: 0

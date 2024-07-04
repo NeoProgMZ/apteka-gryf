@@ -5794,6 +5794,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 30
           total_pages: null
           id: 0
@@ -5808,7 +5809,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          pagination_heading_level: h4
       exposed_form:
         type: bef
         options:
@@ -5840,32 +5840,28 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
-              term_commerce_product_tid_depth:
-                plugin_id: bef
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: ''
-                    filter_rewrite_values_key: false
-                  collapsible: false
-                  collapsible_disable_automatic_open: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
               term_commerce_product_tid_depth_1:
-                plugin_id: bef
+                plugin_id: bef_links
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
-                  collapsible: false
+                  collapsible: true
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                 select_all_none: false
-                select_all_none_nested: false
-                display_inline: false
+              term_commerce_product_tid_depth:
+                plugin_id: bef_links
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: true
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                select_all_none: false
               field_main_ingredient_target_id:
                 plugin_id: default
                 advanced:
@@ -5897,7 +5893,7 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: false
               field_bestseller_value:
-                plugin_id: default
+                plugin_id: bef_single
                 advanced:
                   sort_options: false
                   rewrite:
@@ -5907,7 +5903,7 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: false
               field_novelty_value:
-                plugin_id: default
+                plugin_id: bef_single
                 advanced:
                   sort_options: false
                   rewrite:
@@ -5917,7 +5913,7 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: false
               field_promoted_value:
-                plugin_id: default
+                plugin_id: bef_single
                 advanced:
                   sort_options: false
                   rewrite:
@@ -5927,7 +5923,7 @@ display:
                   collapsible_disable_automatic_open: false
                   is_secondary: false
               field_quality_badge_value:
-                plugin_id: default
+                plugin_id: bef_single
                 advanced:
                   sort_options: false
                   rewrite:
@@ -6007,57 +6003,6 @@ display:
           fields:
             title: title
             title_1: title_1
-        term_commerce_product_tid_depth:
-          id: term_commerce_product_tid_depth
-          table: commerce_product_field_data
-          field: term_commerce_product_tid_depth
-          relationship: none
-          group_type: group
-          admin_label: 'Body parts user filter'
-          entity_type: commerce_product
-          plugin_id: commerce_product_taxonomy_index_tid_depth
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: term_commerce_product_tid_depth_op
-            label: 'Body parts'
-            description: ''
-            use_operator: false
-            operator: term_commerce_product_tid_depth_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: body_parts
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-              customer: '0'
-            reduce: 0
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: 0
-          type: select
-          limit: true
-          vid: body_parts
-          hierarchy: 1
-          error_message: 1
-          depth: '4'
         term_commerce_product_tid_depth_1:
           id: term_commerce_product_tid_depth_1
           table: commerce_product_field_data
@@ -6082,7 +6027,7 @@ display:
             identifier: applications
             required: false
             remember: false
-            multiple: true
+            multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
@@ -6109,6 +6054,57 @@ display:
           hierarchy: 1
           error_message: 1
           depth: '5'
+        term_commerce_product_tid_depth:
+          id: term_commerce_product_tid_depth
+          table: commerce_product_field_data
+          field: term_commerce_product_tid_depth
+          relationship: none
+          group_type: group
+          admin_label: 'Body parts user filter'
+          entity_type: commerce_product
+          plugin_id: commerce_product_taxonomy_index_tid_depth
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: term_commerce_product_tid_depth_op
+            label: 'Body parts'
+            description: ''
+            use_operator: false
+            operator: term_commerce_product_tid_depth_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: body_parts
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              customer: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: 0
+          type: select
+          limit: true
+          vid: body_parts
+          hierarchy: 1
+          error_message: 1
+          depth: '4'
         field_main_ingredient_target_id:
           id: field_main_ingredient_target_id
           table: commerce_product__field_main_ingredient

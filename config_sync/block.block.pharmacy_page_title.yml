@@ -9,7 +9,7 @@ _core:
 id: pharmacy_page_title
 theme: pharmacy
 region: content
-weight: -7
+weight: -6
 provider: null
 plugin: page_title_block
 settings:

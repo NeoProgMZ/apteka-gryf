@@ -46,8 +46,12 @@
     display: none;
 }
 
+#block-pharmacy-main-menu>ul>li>ul.dropdown-menu::after,
 #block-pharmacy-main-menu ul li {
     background-color: var(--bs-dropdown-bg);
+}
+
+#block-pharmacy-main-menu ul li {
     border-bottom: 1px solid var(--bs-green-accent-color);
 }
 
@@ -256,4 +260,13 @@ a.navbar-brand span.site-name-slogan {
 
 .region-primary-menu {
     width: 100%;
+}
+
+#page .filters-result-header.block.block-views .view-content.row {
+    display: flex;
+}
+
+#page .filters-result-header.block.block-views .view-content.row>div {
+    display: block;
+    flex-grow: 1;
 }

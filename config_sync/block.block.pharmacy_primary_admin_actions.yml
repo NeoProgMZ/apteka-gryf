@@ -9,7 +9,7 @@ _core:
 id: pharmacy_primary_admin_actions
 theme: pharmacy
 region: content
-weight: -11
+weight: -10
 provider: null
 plugin: local_actions_block
 settings:
