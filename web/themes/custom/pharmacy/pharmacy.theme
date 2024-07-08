@@ -32,3 +32,31 @@ function pharmacy_form_system_theme_settings_alter(&$form, FormStateInterface $f
     'bg-transparent' => t('Transparent'),
   ];
 }
+
+function pharmacy_preprocess_bef_links(&$variables) {
+    if (false === empty($variables['selected'])) {
+        $selected = array_keys($variables['selected']);
+        $selected = array_shift($selected);
+        $variables['active_elements'] = [];
+
+        if ($variables['depth'][$selected] > 0){
+            $variables['active_elements'][] = $selected;
+            $curr_depth = intval($variables['depth'][$selected]);
+            $slice_end = array_search($selected, array_keys($variables['depth']));
+            $reverse_search = array_slice($variables['depth'], 0, $slice_end, true);
+            $search = array_reverse($reverse_search, true);
+
+            foreach ($search as $parent => $new_depth) {
+                if (intval($new_depth) < $curr_depth) {
+                    // $variables['links'][$parent]['#attributes']['class'][] = 'bef-link--selected';
+                    $variables['active_elements'][] = $parent;
+                    $curr_depth = intval($new_depth);
+                }
+
+                if ($curr_depth === 0) {
+                    break;
+                }
+            }
+        }
+    }
+}
