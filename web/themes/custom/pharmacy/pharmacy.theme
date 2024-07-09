@@ -48,7 +48,6 @@ function pharmacy_preprocess_bef_links(&$variables) {
 
             foreach ($search as $parent => $new_depth) {
                 if (intval($new_depth) < $curr_depth) {
-                    // $variables['links'][$parent]['#attributes']['class'][] = 'bef-link--selected';
                     $variables['active_elements'][] = $parent;
                     $curr_depth = intval($new_depth);
                 }

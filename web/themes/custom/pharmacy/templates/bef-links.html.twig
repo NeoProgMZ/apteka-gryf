@@ -10,13 +10,34 @@
 {% endfor %}
 <div{{attributes.removeClass('form-select').addClass(classes)}} data-testing="true">
 	{% set current_nesting_level = 0 %}
-	{% for child in children %}
+	{% for index, child in children %}
 		{% set item = attribute(element, child) %}
-		{% if child in selected %}
-			{% set new_nesting_level = attribute(depth, child) ?? 0 %}
-		{% endif %}
-		{% set new_nesting_level = attribute(depth, child) ?? 0 %}
-		{% include '@pharmacy/bef-nested-elements.html.twig' %}
-		{% set current_nesting_level = new_nesting_level %}
+        {% set current_nesting_level = attribute(depth, child) ?? 0 %}
+        {% set new_nesting_level = attribute(depth, children[index+1]) ?? 0 %}
+
+		{% if loop.first %}
+			<ul class="first">
+        {% endif %}
+
+        {% if current_nesting_level < new_nesting_level %}
+                <li>
+                    <details{% if child in active_elements %} open="open"{% endif %}>
+                        <summary>{{ item }}</summary>
+                        <ul class="nesting-level-{{new_nesting_level}}">
+        {% elseif current_nesting_level > new_nesting_level %}
+                <li>{{ item }}</li>
+            {% set delta = (current_nesting_level - new_nesting_level) | abs %}
+            {% for i in 1..delta %}
+                        </ul>
+                    </details>
+                </li>
+            {% endfor %}
+        {% else %}
+                <li>{{ item }}</li>
+        {% endif %}
+
+        {% if loop.last %}
+            </ul>
+        {% endif %}
 	{% endfor %}
 </div>
