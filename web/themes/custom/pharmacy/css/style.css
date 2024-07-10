@@ -315,6 +315,10 @@ a.navbar-brand span.site-name-slogan {
     flex-grow: 1;
 }
 
+#views-exposed-form-product-details-page-2 details>summary>*:first-child {
+    flex-grow: 1;
+}
+
 #views-exposed-form-product-details-page-2 ul.first a:hover {
     text-decoration: underline;
 }
