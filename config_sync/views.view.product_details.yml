@@ -5847,7 +5847,7 @@ display:
                   rewrite:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
-                  collapsible: true
+                  collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                 select_all_none: false
@@ -5858,20 +5858,21 @@ display:
                   rewrite:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
-                  collapsible: true
+                  collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
                 select_all_none: false
               field_main_ingredient_target_id:
-                plugin_id: default
+                plugin_id: bef_links
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
-                  collapsible: false
+                  collapsible: true
                   collapsible_disable_automatic_open: false
                   is_secondary: false
+                select_all_none: false
               field_product_producer_target_id:
                 plugin_id: default
                 advanced:
@@ -6018,7 +6019,7 @@ display:
           exposed: true
           expose:
             operator_id: term_commerce_product_tid_depth_1_op
-            label: Applications
+            label: ''
             description: ''
             use_operator: false
             operator: term_commerce_product_tid_depth_1_op
@@ -6069,7 +6070,7 @@ display:
           exposed: true
           expose:
             operator_id: term_commerce_product_tid_depth_op
-            label: 'Body parts'
+            label: ''
             description: ''
             use_operator: false
             operator: term_commerce_product_tid_depth_op
