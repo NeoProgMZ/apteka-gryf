@@ -273,40 +273,35 @@ a.navbar-brand span.site-name-slogan {
     flex-grow: 1;
 }
 
+#block-pharmacy-exposedformproduct-detailspage-2 {
+    padding: 0px;
+    border: 0px none;
+}
+
 #views-exposed-form-product-details-page-2 ul {
     list-style: none;
+    margin: 0px;
+    padding-left: 0.625rem;
+}
+
+#views-exposed-form-product-details-page-2 ul.first {
     padding-left: 0px;
 }
 
-#views-exposed-form-product-details-page-2 ul.nesting-level-1>li {
-    padding-left: 10px;
-}
-
-#views-exposed-form-product-details-page-2 ul.nesting-level-2>li {
-    padding-left: 20px;
-}
-
-#views-exposed-form-product-details-page-2 ul.nesting-level-3>li {
-    padding-left: 30px;
-}
-
-#views-exposed-form-product-details-page-2 ul.nesting-level-4>li {
-    padding-left: 40px;
-}
-
 #views-exposed-form-product-details-page-2 details>summary {
-    display: block;
+    display: flex;
 }
 
 #views-exposed-form-product-details-page-2 details>summary::after {
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 10px solid #a1a8bd;
-    border-inline: 7px solid transparent;
-    writing-mode: vertical-rl;
     transition: 0.2s;
     float: right;
+    content: "";
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" /></svg>');
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    background-position: center;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 #views-exposed-form-product-details-page-2 details[open]>summary::after {
@@ -316,15 +311,44 @@ a.navbar-brand span.site-name-slogan {
 #views-exposed-form-product-details-page-2 ul.first a {
     text-decoration: none;
     color: var(--bs-body-color);
-    padding: 10px 0px;
     display: inline-block;
+    flex-grow: 1;
+}
+
+#views-exposed-form-product-details-page-2 ul.first a:hover {
+    text-decoration: underline;
 }
 
 #views-exposed-form-product-details-page-2 ul.first li {
-    /* display: inline-block; */
+    width: 100%;
+}
+
+#views-exposed-form-product-details-page-2 ul.first li>a,
+#views-exposed-form-product-details-page-2 ul.first li>details>summary {
+    padding: 0.625rem 0 0.625rem 0.938rem;
+}
+
+#views-exposed-form-product-details-page-2 ul.first li>a {
     width: 100%;
 }
 
 #views-exposed-form-product-details-page-2 ul.first li:last-child {
     border: 0px none;
+}
+
+#views-exposed-form-product-details-page-2 .flex-wrap>div,
+#views-exposed-form-product-details-page-2 .flex-wrap>details {
+    border: 1px solid var(--bs-green-accent-color);
+    border-radius: var(--bs-border-radius);
+    margin-bottom: 1rem;
+}
+
+#views-exposed-form-product-details-page-2 ul.first li.active>a,
+#views-exposed-form-product-details-page-2 ul.first li.active>details>summary {
+    background-color: var(--bs-green-accent-color);
+    color: white;
+}
+
+#views-exposed-form-product-details-page-2 ul.first li.active>details>summary>a {
+    color: white;
 }

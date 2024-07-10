@@ -20,12 +20,12 @@
         {% endif %}
 
         {% if current_nesting_level < new_nesting_level %}
-                <li>
-                    <details{% if child in active_elements %} open="open"{% endif %}>
+                <li{% if child in selected %} class="active"{% endif %}>
+                    <details{% if child in active_elements or child in selected %} open="open"{% endif %}>
                         <summary>{{ item }}</summary>
                         <ul class="nesting-level-{{new_nesting_level}}">
         {% elseif current_nesting_level > new_nesting_level %}
-                <li>{{ item }}</li>
+                <li{% if child in selected %} class="active"{% endif %}>{{ item }}</li>
             {% set delta = (current_nesting_level - new_nesting_level) | abs %}
             {% for i in 1..delta %}
                         </ul>
@@ -33,7 +33,7 @@
                 </li>
             {% endfor %}
         {% else %}
-                <li>{{ item }}</li>
+                <li{% if child in selected %} class="active"{% endif %}>{{ item }}</li>
         {% endif %}
 
         {% if loop.last %}
