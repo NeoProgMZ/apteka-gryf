@@ -1,0 +1,11 @@
+uuid: ae436d64-266d-47c6-a2ac-2709bd2d566d
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.pop_up_link
+label: 'Pop-up link'
+description: ''
+targetEntityType: commerce_product
+cache: true

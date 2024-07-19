@@ -1,0 +1,16 @@
+uuid: f099fac2-c5d3-4e6b-aeb5-1d506f1cfc3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+  enforced:
+    module:
+      - commerce_add_to_cart_popup_form
+_core:
+  default_config_hash: XL9eIY5XiWHpGygacfMxB-kAj3THfj_tWjdsoGGLCcM
+id: commerce_product.commerce_add_to_cart_popup_form
+label: 'Add To Cart Pop-Up'
+description: ''
+targetEntityType: commerce_product
+cache: true

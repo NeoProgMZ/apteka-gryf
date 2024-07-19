@@ -1,0 +1,11 @@
+uuid: 329f197d-f955-4b37-b427-49e868e6bc51
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.variation_selector
+label: 'Variation selector'
+description: ''
+targetEntityType: commerce_product_variation
+cache: true

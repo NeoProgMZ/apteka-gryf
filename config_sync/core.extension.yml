@@ -13,6 +13,7 @@ module:
   ckeditor5: 0
   comment: 0
   commerce: 0
+  commerce_add_to_cart_popup_form: 0
   commerce_cart: 0
   commerce_checkout: 0
   commerce_log: 0
@@ -30,6 +31,7 @@ module:
   config_translation: 0
   contact: 0
   contextual: 0
+  cpv_radio_widget: 0
   datetime: 0
   dblog: 0
   dynamic_page_cache: 0

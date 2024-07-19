@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.commerce_product.pop_up_link
     - field.storage.commerce_product.field_description
     - field.storage.commerce_product.field_image
     - field.storage.commerce_product.field_product_producer
     - field.storage.commerce_product.field_product_unit
-    - field.storage.commerce_product.field_tags
     - field.storage.commerce_product_variation.field_bestseller
     - field.storage.commerce_product_variation.field_novelty
     - field.storage.commerce_product_variation.field_promoted
@@ -45,7 +45,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: '{{ title }}'
+      title: ''
       fields:
         field_image:
           id: field_image
@@ -293,7 +293,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 5
+          items_per_page: 1
       exposed_form:
         type: basic
         options:
@@ -310,18 +310,7 @@ display:
       cache:
         type: tag
         options: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          empty: true
-          content: 'No matching products found'
-          tokenize: false
+      empty: {  }
       sorts: {  }
       arguments:
         product_id:
@@ -428,12 +417,10 @@ display:
           entity_field: variations
           plugin_id: standard
           required: true
-        field_body_parts:
-          id: field_body_parts
-          table: commerce_product__field_body_parts
-          field: field_body_parts
-          plugin_id: standard
       group_by: false
+      use_more: false
+      use_more_always: false
+      use_more_text: more
       link_display: '0'
       link_url: ''
       header: {  }
@@ -1112,6 +1099,57 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        rendered_entity:
+          id: rendered_entity
+          table: commerce_product
+          field: rendered_entity
+          relationship: none
+          group_type: group
+          admin_label: 'Add to cart popup link'
+          entity_type: commerce_product
+          plugin_id: rendered_entity
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view_mode: pop_up_link
       pager:
         type: some
         options:
@@ -1179,9 +1217,9 @@ display:
         title: false
         css_class: false
         pager: false
-        use_more: false
-        use_more_always: false
-        use_more_text: false
+        use_more: true
+        use_more_always: true
+        use_more_text: true
         link_display: false
         link_url: false
         fields: false
@@ -1190,9 +1228,6 @@ display:
         filter_groups: false
       css_class: promoted-products-block
       display_description: ''
-      use_more: true
-      use_more_always: false
-      use_more_text: more
       link_display: page_1
       link_url: ''
       display_extenders: {  }
@@ -1871,6 +1906,57 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        rendered_entity:
+          id: rendered_entity
+          table: commerce_product
+          field: rendered_entity
+          relationship: none
+          group_type: group
+          admin_label: 'Add to cart popup link'
+          entity_type: commerce_product
+          plugin_id: rendered_entity
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view_mode: pop_up_link
       pager:
         type: some
         options:
@@ -1937,9 +2023,9 @@ display:
         title: false
         css_class: false
         pager: false
-        use_more: false
-        use_more_always: false
-        use_more_text: false
+        use_more: true
+        use_more_always: true
+        use_more_text: true
         link_display: false
         link_url: false
         fields: false
@@ -1948,9 +2034,6 @@ display:
         filter_groups: false
       css_class: new-products-block
       display_description: ''
-      use_more: true
-      use_more_always: false
-      use_more_text: more
       link_display: page_1
       link_url: ''
       display_extenders: {  }
@@ -2629,6 +2712,57 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        rendered_entity:
+          id: rendered_entity
+          table: commerce_product
+          field: rendered_entity
+          relationship: none
+          group_type: group
+          admin_label: 'Add to cart popup link'
+          entity_type: commerce_product
+          plugin_id: rendered_entity
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view_mode: pop_up_link
       pager:
         type: some
         options:
@@ -2696,9 +2830,9 @@ display:
         title: false
         css_class: false
         pager: false
-        use_more: false
-        use_more_always: false
-        use_more_text: false
+        use_more: true
+        use_more_always: true
+        use_more_text: true
         link_display: false
         link_url: false
         fields: false
@@ -2707,9 +2841,6 @@ display:
         filter_groups: false
       css_class: bestsellers-block
       display_description: ''
-      use_more: true
-      use_more_always: false
-      use_more_text: more
       link_display: page_1
       link_url: ''
       display_extenders: {  }
@@ -3388,6 +3519,57 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        rendered_entity:
+          id: rendered_entity
+          table: commerce_product
+          field: rendered_entity
+          relationship: none
+          group_type: group
+          admin_label: 'Add to cart popup link'
+          entity_type: commerce_product
+          plugin_id: rendered_entity
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view_mode: pop_up_link
       pager:
         type: some
         options:
@@ -3466,7 +3648,7 @@ display:
         filter_groups: false
       css_class: quality-badge-block
       display_description: ''
-      use_more: true
+      use_more: false
       use_more_always: false
       use_more_text: more
       link_display: page_1
@@ -4368,6 +4550,8 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      enabled: true
+      title: '{{ title }} {{ title_1 }}'
       fields:
         product_id:
           id: product_id
@@ -4500,6 +4684,119 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        title_1:
+          id: title_1
+          table: commerce_product_variation_field_data
+          field: title
+          relationship: variations_target_id
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_product_variation
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'Combined title'
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ title }} {{ title_1 }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
         field_variant_photo:
           id: field_variant_photo
           table: commerce_product_variation__field_variant_photo
@@ -4560,68 +4857,6 @@ display:
           group_columns: {  }
           group_rows: true
           delta_limit: 1
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_description:
-          id: field_description
-          table: commerce_product__field_description
-          field: field_description
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: col-12
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
@@ -4885,6 +5120,68 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_description:
+          id: field_description
+          table: commerce_product__field_description
+          field: field_description
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: col-12
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
       pager:
         type: some
         options:
@@ -4965,6 +5262,7 @@ display:
           hide_empty: false
       defaults:
         empty: false
+        title: false
         pager: false
         group_by: true
         style: false
@@ -5727,16 +6025,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_tags:
-          id: field_tags
-          table: commerce_product__field_tags
-          field: field_tags
+        rendered_entity:
+          id: rendered_entity
+          table: commerce_product
+          field: rendered_entity
           relationship: none
           group_type: group
-          admin_label: ''
-          plugin_id: field
+          admin_label: 'Add to cart popup link'
+          entity_type: commerce_product
+          plugin_id: rendered_entity
           label: ''
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -5776,20 +6075,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          view_mode: pop_up_link
       pager:
         type: mini
         options:
@@ -6472,7 +6758,6 @@ display:
         - url.query_args
         - user
       tags:
-        - 'config:field.storage.commerce_product.field_tags'
         - 'config:field.storage.commerce_product_variation.field_bestseller'
         - 'config:field.storage.commerce_product_variation.field_novelty'
         - 'config:field.storage.commerce_product_variation.field_promoted'
