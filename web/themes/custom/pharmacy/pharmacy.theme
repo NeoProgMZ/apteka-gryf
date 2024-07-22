@@ -5,6 +5,7 @@
  * Functions to support theming in the SASS Starterkit subtheme.
  */
 
+use Drupal\Core\Extension\ModuleExtensionList;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -33,6 +34,13 @@ function pharmacy_form_system_theme_settings_alter(&$form, FormStateInterface $f
   ];
 }
 
+/**
+ * Custom side menus fro mexposed filters builder.
+ * 
+ * @param mixed $variables 
+ * 
+ * @return void 
+ */
 function pharmacy_preprocess_bef_links(&$variables) {
     if (false === empty($variables['selected'])) {
         $selected = array_keys($variables['selected']);
@@ -58,4 +66,8 @@ function pharmacy_preprocess_bef_links(&$variables) {
             }
         }
     }
+}
+
+function pharmacy_preprocess_commerce_cart_block(&$variables) {
+    $variables['icon']['#uri'] = \Drupal::theme()->getActiveTheme()->getPath() . '/icons/cart.png';
 }
