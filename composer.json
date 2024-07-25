@@ -43,6 +43,7 @@
         "drupal/bootstrap_barrio": "^5.5",
         "drupal/commerce": "^2.37",
         "drupal/commerce_add_to_cart_popup_form": "^1.0@beta",
+        "drupal/commerce_cart_flyout": "^1.11",
         "drupal/commerce_product_taxonomy_filter": "^1.0",
         "drupal/commerce_shipping": "^2.7",
         "drupal/core-composer-scaffold": "^10",

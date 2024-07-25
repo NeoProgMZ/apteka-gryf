@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function assorted_fixes_install($is_syncing) {
+    // Set the weight of the assorted_fixes.module to 1000 so it is loaded last.
+    module_set_weight('assorted_fixes', 10000);
+}
