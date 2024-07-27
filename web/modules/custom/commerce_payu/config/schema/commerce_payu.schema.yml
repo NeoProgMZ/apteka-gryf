@@ -1,0 +1,15 @@
+commerce_payment.commerce_payment_gateway.plugin.payu_redirect_checkout:
+  type: commerce_payment_gateway_configuration
+  mapping:
+      pos_id:
+        type: number
+        label: 'POS Id'
+      signature:
+        type: string
+        label: 'Second key'
+      client_id:
+        type: number
+        label: 'OAuth Client Id'
+      client_secret:
+        type: string
+        label: 'OAuth Client Secret'

@@ -44,6 +44,7 @@
         "drupal/commerce": "^2.37",
         "drupal/commerce_add_to_cart_popup_form": "^1.0@beta",
         "drupal/commerce_cart_flyout": "^1.11",
+        "drupal/commerce_payment": "^2.39",
         "drupal/commerce_product_taxonomy_filter": "^1.0",
         "drupal/commerce_shipping": "^2.7",
         "drupal/core-composer-scaffold": "^10",
@@ -58,6 +59,7 @@
         "drupal/token": "^1.11",
         "drupalcommerce/commerce_base": "10.x-dev",
         "drush/drush": "^12.4",
+        "openpayu/openpayu": "2.3.*",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"
     },

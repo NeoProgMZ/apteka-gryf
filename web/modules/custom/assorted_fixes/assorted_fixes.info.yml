@@ -1,6 +1,5 @@
 name: Assorted fixes
 description: Assorted fixes for modules.
 package: NeoProg
-
 type: module
 core_version_requirement: ^9.4 || ^10
