@@ -14,9 +14,9 @@ configuration:
   payment_method_types:
     - credit_card
   collect_billing_information: false
-  pos_id: '484040'
-  signature: bc91a88fe35f4ce994c2d0e2f7cd12d3
-  client_id: '484040'
-  client_secret: 68bb8bef964149dfb9e294ce0a2c1f6a
+  pos_id: '0'
+  signature:
+  client_id: '0'
+  client_secret:
 conditions: {  }
 conditionOperator: AND
