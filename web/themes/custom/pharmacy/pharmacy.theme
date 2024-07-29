@@ -15,23 +15,24 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * Example on how to alter theme settings form
  */
-function pharmacy_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
-  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
-  ];
-  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
-  ];
+function pharmacy_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
+{
+    $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+        'bg-primary' => t('Primary'),
+        'bg-secondary' => t('Secondary'),
+        'bg-light' => t('Light'),
+        'bg-dark' => t('Dark'),
+        'bg-white' => t('White'),
+        'bg-transparent' => t('Transparent'),
+    ];
+    $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+        'bg-primary' => t('Primary'),
+        'bg-secondary' => t('Secondary'),
+        'bg-light' => t('Light'),
+        'bg-dark' => t('Dark'),
+        'bg-white' => t('White'),
+        'bg-transparent' => t('Transparent'),
+    ];
 }
 
 /**
@@ -41,13 +42,14 @@ function pharmacy_form_system_theme_settings_alter(&$form, FormStateInterface $f
  * 
  * @return void 
  */
-function pharmacy_preprocess_bef_links(&$variables) {
+function pharmacy_preprocess_bef_links(&$variables)
+{
     if (false === empty($variables['selected'])) {
         $selected = array_keys($variables['selected']);
         $selected = array_shift($selected);
         $variables['active_elements'] = [];
 
-        if ($variables['depth'][$selected] > 0){
+        if ($variables['depth'][$selected] > 0) {
             $variables['active_elements'][] = $selected;
             $curr_depth = intval($variables['depth'][$selected]);
             $slice_end = array_search($selected, array_keys($variables['depth']));
@@ -67,43 +69,3 @@ function pharmacy_preprocess_bef_links(&$variables) {
         }
     }
 }
-
-// function pharmacy_preprocess_commerce_cart_flyout_block(&$variables) {
-//         print_r('<pre>');
-//         print_r(array_keys($variables));
-//         print_r('<br/>');
-//         print_r($variables['elements']);
-//         print_r('<br/>');
-//         print_r($variables['elements']['#attached']);
-//         // foreach ($variables as $key => $element) {
-//         //     print_r('<br/>'.$key.'<br/>');
-//         //     if (is_array($element) === true) {
-//         //         print_r(array_keys($element));
-//         //     } else if (is_object($element)) {
-//         //         print_r(get_class($element));
-//         //     } else {
-//         //         print_r($element);
-//         //     }
-//         //     print_r('<br/>');
-//         // }
-
-//         exit();
-//     // $variables['icon']['#uri'] = \Drupal::theme()->getActiveTheme()->getPath() . '/icons/cart.png';
-// }
-
-
-// function pharmacy_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-//     if (false !== strpos($form_id, '_commerce_cart_block_default_')){
-//     // print_r('<br/>');
-//     // print_r('<pre>');
-//     // print_r(array_keys($form));
-//     // print_r('</pre><br/>');
-//     // print_r($form['#action']);
-//     // print_r('<br/>');
-//     // // print_r($form['actions']);
-//     // // print_r('<br/>');
-//     // // print_r(array_keys($variables['dropdown']));
-//     // exit();
-//         $form['#action'] = '/cart';
-//     }
-// }

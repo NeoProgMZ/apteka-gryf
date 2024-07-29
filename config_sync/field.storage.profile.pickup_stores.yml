@@ -1,0 +1,22 @@
+uuid: 64d0aed3-0737-4859-821c-333e04fc765f
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_store
+    - profile
+_core:
+  default_config_hash: vEXLM1l9G-G1IRZcno8yTAzFjGg-EMxMPJq1DQI_TP4
+id: profile.pickup_stores
+field_name: pickup_stores
+entity_type: profile
+type: entity_reference
+settings:
+  target_type: commerce_store
+module: core
+locked: true
+cardinality: -1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

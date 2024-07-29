@@ -1,0 +1,37 @@
+uuid: 19b182f1-d289-45e4-8dd1-bdd0229c398c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.pickup_address
+    - profile.type.pickup
+  module:
+    - address
+_core:
+  default_config_hash: Co4aEJOZgrwT_GECZZ5VNyCS71I02nnhL4ihBhhkCgM
+id: profile.pickup.pickup_address
+field_name: pickup_address
+entity_type: profile
+bundle: pickup
+label: 'Pickup point'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: optional
+    additionalName:
+      override: hidden
+    familyName:
+      override: optional
+    organization:
+      override: required
+    addressLine2:
+      override: hidden
+  fields: {  }
+field_type: address

@@ -1,0 +1,8 @@
+content:
+  pickup_hours:
+    settings:
+      closed_format: Zamknięte
+      separator:
+        grouped_days: ' - '
+        hours_hours: '-'
+        more_hours: ', '

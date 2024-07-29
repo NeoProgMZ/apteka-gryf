@@ -1,0 +1,21 @@
+uuid: 0d2b36fb-4061-45db-a54f-4ae17e77a2ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - profile
+_core:
+  default_config_hash: GkkHz3oRf4oZnAzZiDEUXSIuuxkbhG2Wcr0gKDSkkBY
+id: profile.pickup_address
+field_name: pickup_address
+entity_type: profile
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

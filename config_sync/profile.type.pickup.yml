@@ -1,0 +1,15 @@
+uuid: 051399dc-ec84-4aa3-b374-2c4257a927c3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ab2GamCy-JYQdf_cKS_hEF5q8UCwSZf4Qh9VA2h0mdI
+id: pickup
+label: Pickup
+display_label: null
+multiple: true
+registration: false
+roles:
+  - pickup_vendor
+allow_revisions: false
+new_revision: false

@@ -1,0 +1,14 @@
+uuid: 934ccd6b-8110-4ebb-b2d9-89e4eede7e88
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.pickup_vendor
+  module:
+    - user
+id: user_add_role_action.pickup_vendor
+label: 'Add the Pickup vendor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: pickup_vendor

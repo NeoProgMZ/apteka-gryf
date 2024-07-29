@@ -1,41 +1,26 @@
 <?php
 
-// function assorted_fixes_block_view_commerce_cart_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
-//     // if ($block->getBaseId() === 'commerce_cart'){
-//     print_r('<pre>');
-//     print_r($block->getBaseId());
-//     print_r('<br/>');
-//     print_r(array_keys($build));
-//     print_r('<br/>');
-//     print_r($build['#attached']);
-//     // print_r('<br/>');
-//     // print_r($block->getConfiguration());
-//     // print_r('<br/>');
-//     // // print_r(array_keys($build['#block']));
-//     // exit();
-//     // }
-// }
-
-// function assorted_fixes_block_alter(&$definitions) {
-//     print_r('<pre>');
-//     print_r(array_keys($definitions['views_block:commerce_cart_block-block_1']));
-//     exit();
-// }
-
-// use Drupal\views\ViewExecutable;
-
-// function assorted_fixes_views_post_build(ViewExecutable $view) {
-//     print_r('<br/>'.$view->id().'<br/>');
-// }
-
 use Drupal\assorted_fixes\Plugin\Block\CartBlock;
+use Drupal\assorted_fixes\Plugin\Commerce\CheckoutPane\SortedShippingInformation;
 
 /**
  * Implements hook_block_alter().
  *
  * Replaces the commerce_cart CartBlock block with the commerce_cart_flyout one.
  */
-function assorted_fixes_flyout_block_alter(array &$info) {
+function assorted_fixes_flyout_block_alter(array &$info)
+{
     $info['commerce_cart']['class'] = CartBlock::class;
     $info['commerce_cart']['provider'] = 'assorted_fixes';
-  }
+}
+
+/**
+ * Implements hook_commerce_checkout_pane_info_alter().
+ */
+function assorted_fixes_commerce_checkout_pane_info_alter(array &$info)
+{
+    if (isset($info['shipping_information'])) {
+        $info['shipping_information']['class'] = SortedShippingInformation::class;
+        $info['shipping_information']['provider'] = 'assorted_fixes';
+    }
+}

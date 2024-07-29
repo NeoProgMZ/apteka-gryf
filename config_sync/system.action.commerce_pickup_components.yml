@@ -1,0 +1,13 @@
+uuid: b300589f-959e-4a3d-bff9-590fe3487f78
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_pickup
+_core:
+  default_config_hash: TdSY4pdMbV6OeCkq6ULiwmuwDaim40homRD1Rqz8PzU
+id: commerce_pickup_components
+label: 'Edit pickup components'
+type: profile
+plugin: commerce_pickup_components
+configuration: {  }

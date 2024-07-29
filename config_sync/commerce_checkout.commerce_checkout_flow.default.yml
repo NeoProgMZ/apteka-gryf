@@ -1,41 +1,62 @@
 uuid: 72d9011e-d828-43e4-8cb3-cbdd95c1cd30
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - commerce_payment
+    - commerce_promotion
+    - commerce_shipping
 _core:
   default_config_hash: 1BxQSpt9FMh77dg9LMMrriQ4JRWHwnBKzywwOwSpQ04
-id: default
 label: Default
+id: default
 plugin: multistep_default
 configuration:
   display_checkout_progress: true
   display_checkout_progress_breadcrumb_links: false
-  guest_order_assign: false
-  guest_new_account: false
+  guest_order_assign: true
+  guest_new_account: true
   guest_new_account_notify: false
   panes:
     login:
-      allow_guest_checkout: true
-      allow_registration: false
       step: login
       weight: 0
+      allow_guest_checkout: true
+      allow_registration: false
+      registration_form_mode: register
     contact_information:
-      double_entry: true
       step: order_information
       weight: 1
-    billing_information:
-      step: order_information
-      weight: 2
+      double_entry: true
     review:
       step: review
       weight: 3
     completion_message:
+      step: complete
+      weight: 4
       message:
         value: "Your order number is [commerce_order:order_number].\r\nYou can view your order on your account page when logged in."
         format: plain_text
-      step: complete
-      weight: 4
     order_summary:
-      view: null
       step: _sidebar
       weight: 5
+      view: null
+    completion_register:
+      step: complete
+      weight: 10
+    payment_information:
+      step: order_information
+      weight: 10
+    payment_process:
+      step: payment
+      weight: 10
+      capture: true
+    coupon_redemption:
+      step: _sidebar
+      weight: 10
+      allow_multiple: false
+    shipping_information:
+      step: _disabled
+      weight: 10
+      auto_recalculate: true
+      require_shipping_profile: true

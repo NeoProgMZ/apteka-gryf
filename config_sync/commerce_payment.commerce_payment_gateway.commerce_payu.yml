@@ -1,0 +1,22 @@
+uuid: fa6e72b4-d6eb-40be-90c1-3192890525e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_payu
+id: commerce_payu
+label: 'Commerce PayU'
+weight: null
+plugin: payu_redirect_checkout
+configuration:
+  display_label: PayU
+  mode: test
+  payment_method_types:
+    - credit_card
+  collect_billing_information: false
+  pos_id: '484040'
+  signature: bc91a88fe35f4ce994c2d0e2f7cd12d3
+  client_id: '484040'
+  client_secret: 68bb8bef964149dfb9e294ce0a2c1f6a
+conditions: {  }
+conditionOperator: AND

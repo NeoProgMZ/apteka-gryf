@@ -1,9 +1,9 @@
 uuid: c7d9d48b-aae4-4473-8170-48f5c71b66c3
 langcode: en
-status: true
+status: false
 dependencies:
   module:
-    - commerce_cart
+    - commerce_cart_flyout
   theme:
     - pharmacy
 id: pharmacy_cart
@@ -19,4 +19,5 @@ settings:
   provider: commerce_cart
   dropdown: true
   show_if_empty: true
+  use_quantity_count: false
 visibility: {  }

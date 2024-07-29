@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.profile.customer.address
-    - field.field.profile.customer.field_customer_phone
+    - field.field.profile.customer.field_phone
     - field.field.profile.customer.tax_number
     - profile.type.customer
   module:
-    - address
+    - commerce_pickup
     - commerce_tax
-    - phone_international
+    - mobile_number
   enforced:
     module:
       - commerce_order
@@ -22,16 +22,17 @@ bundle: customer
 mode: default
 content:
   address:
-    type: address_default
+    type: pickup_address_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
-  field_customer_phone:
-    type: phone_international_formatter
+  field_phone:
+    type: mobile_number_international
     label: above
-    settings: {  }
+    settings:
+      as_link: false
     third_party_settings: {  }
     weight: 2
     region: content

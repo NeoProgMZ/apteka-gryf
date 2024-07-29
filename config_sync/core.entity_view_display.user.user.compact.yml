@@ -5,9 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.user.compact
     - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_phone
     - field.field.user.user.field_user_first_name
     - field.field.user.user.field_user_last_name
-    - field.field.user.user.field_user_phone
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -34,9 +34,10 @@ content:
 hidden:
   commerce_remote_id: true
   customer_profiles: true
+  field_phone: true
   field_user_first_name: true
   field_user_last_name: true
-  field_user_phone: true
   langcode: true
   member_for: true
+  pickup_profiles: true
   search_api_excerpt: true

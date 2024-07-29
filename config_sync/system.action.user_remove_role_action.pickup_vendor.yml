@@ -1,0 +1,14 @@
+uuid: 988b7070-e946-432c-88ef-803526fb032e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.pickup_vendor
+  module:
+    - user
+id: user_remove_role_action.pickup_vendor
+label: 'Remove the Pickup vendor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: pickup_vendor

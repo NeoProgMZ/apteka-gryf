@@ -15,11 +15,15 @@ module:
   commerce: 0
   commerce_add_to_cart_popup_form: 0
   commerce_cart: 0
+  commerce_cart_api: 0
+  commerce_cart_flyout: 0
   commerce_checkout: 0
   commerce_log: 0
   commerce_number_pattern: 0
   commerce_order: 0
   commerce_payment: 0
+  commerce_payu: 0
+  commerce_pickup: 0
   commerce_price: 0
   commerce_product: 0
   commerce_product_taxonomy_filter: 0
@@ -52,16 +56,19 @@ module:
   locale: 0
   menu_link_content: 0
   menu_ui: 0
+  mobile_number: 0
   mysql: 0
   node: 0
+  office_hours: 0
   options: 0
   page_cache: 0
   path: 0
   path_alias: 0
-  phone_international: 0
   physical: 0
   profile: 0
+  rest: 0
   search_api: 0
+  serialization: 0
   shortcut: 0
   soap_endpoint: 0
   state_machine: 0
@@ -72,12 +79,14 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  tzfield: 0
   update: 0
   user: 0
   views_ui: 0
   content_translation: 10
   views: 10
   commerce_base: 1000
+  assorted_fixes: 10000
 theme:
   olivero: 0
   claro: 0

@@ -1,0 +1,23 @@
+uuid: 55af33f6-1a45-4ff5-85a8-b6ee49ba6b87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.pickup_hours
+    - profile.type.pickup
+  module:
+    - office_hours
+_core:
+  default_config_hash: QzPnyWzyVjkAMdhKMXreJP5RgTO0RnZ9hnkxN-hWRz0
+id: profile.pickup.pickup_hours
+field_name: pickup_hours
+entity_type: profile
+bundle: pickup
+label: 'Pickup point hours'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings: {  }
+field_type: office_hours

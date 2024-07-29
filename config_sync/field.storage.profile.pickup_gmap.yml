@@ -1,0 +1,23 @@
+uuid: 5a5be4a2-3c61-4666-9c57-67593d73bbb4
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+_core:
+  default_config_hash: JyAlUD6i53mo-LQsPfeBfff9trJezbXBBwP0EJmQaR4
+id: profile.pickup_gmap
+field_name: pickup_gmap
+entity_type: profile
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

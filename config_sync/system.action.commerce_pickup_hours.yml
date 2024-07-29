@@ -1,0 +1,13 @@
+uuid: fd57e512-1cc2-462e-8a1e-14e6d7be40ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_pickup
+_core:
+  default_config_hash: qXo_COOv8DqxAiZQjo93vWRMI_lJZ2413hxm1pkV5xU
+id: commerce_pickup_hours
+label: 'Edit pickup hours'
+type: profile
+plugin: commerce_pickup_hours
+configuration: {  }

@@ -4,14 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_phone
     - field.field.user.user.field_user_first_name
     - field.field.user.user.field_user_last_name
-    - field.field.user.user.field_user_phone
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
-    - phone_international
+    - mobile_number
     - user
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
@@ -30,6 +30,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_phone:
+    type: mobile_number_default
+    weight: 9
+    region: content
+    settings:
+      countries: {  }
+      default_country: US
+      placeholder: null
+    third_party_settings: {  }
   field_user_first_name:
     type: string_textfield
     weight: 7
@@ -45,19 +54,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_user_phone:
-    type: phone_international_widget
-    weight: 9
-    region: content
-    settings:
-      geolocation: false
-      initial_country: PL
-      exclude_countries:
-        - PL
-      preferred_countries:
-        - PL
-      countries: include
     third_party_settings: {  }
   language:
     weight: 0
@@ -79,3 +75,4 @@ hidden:
   commerce_remote_id: true
   customer_profiles: true
   langcode: true
+  pickup_profiles: true

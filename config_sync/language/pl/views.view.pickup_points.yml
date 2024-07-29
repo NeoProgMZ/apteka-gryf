@@ -1,0 +1,125 @@
+display:
+  default:
+    display_title: Główny
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Zastosuj
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      pager:
+        options:
+          tags:
+            previous: ‹‹
+            next: ››
+            first: '« Pierwsza'
+            last: 'Ostatnia »'
+          expose:
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options_all_label: '- Wszystko -'
+            offset_label: Przesunięcie
+      fields:
+        profile_id:
+          separator: ', '
+        is_default:
+          label: Domyślny
+          separator: ', '
+        pickup_timezone:
+          separator: ', '
+        profile_bulk_form:
+          action_title: Akcja
+        status:
+          label: Aktywne
+          separator: ', '
+        uid:
+          separator: ', '
+        pickup_address:
+          separator: ', '
+        pickup_hours:
+          settings:
+            closed_format: Zamknięte
+            separator:
+              grouped_days: ' - '
+              hours_hours: '-'
+              more_hours: ', '
+          separator: ', '
+        pickup_stores:
+          separator: ', '
+        operations:
+          label: Operacje
+      filters:
+        status:
+          expose:
+            label: Aktywne
+        pickup_hours_day:
+          group_info:
+            group_items:
+              1:
+                title: poniedziałek
+              2:
+                title: wtorek
+              3:
+                title: środa
+              4:
+                title: czwartek
+              6:
+                title: sobota
+              7:
+                title: niedziela
+  user_page:
+    display_options:
+      arguments:
+        uid:
+          exception:
+            title: Wszystko
+        type:
+          exception:
+            title: Wszystko
+      fields:
+        profile_id:
+          separator: ', '
+        is_default:
+          label: Domyślny
+          separator: ', '
+        pickup_timezone:
+          separator: ', '
+        profile_bulk_form:
+          action_title: Akcja
+        status:
+          label: Aktywne
+          separator: ', '
+        pickup_address:
+          separator: ', '
+        pickup_hours:
+          settings:
+            closed_format: Zamknięte
+            separator:
+              grouped_days: ' - '
+              hours_hours: '-'
+              more_hours: ', '
+          separator: ', '
+        pickup_stores:
+          separator: ', '
+        operations:
+          label: Operacje
+      filters:
+        status:
+          expose:
+            label: Aktywne
+        pickup_hours_day:
+          group_info:
+            group_items:
+              1:
+                title: poniedziałek
+              2:
+                title: wtorek
+              3:
+                title: środa
+              4:
+                title: czwartek
+              6:
+                title: sobota
+              7:
+                title: niedziela

@@ -1,0 +1,13 @@
+uuid: 63e7487c-8337-4420-a0a7-5fdcb904584d
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_pickup
+_core:
+  default_config_hash: whxfjq4_y2AFJtxOubWH2c25PCvxp3VYWeJd7Gf721Q
+id: commerce_pickup_addresses
+label: 'Edit pickup addresses'
+type: profile
+plugin: commerce_pickup_addresses
+configuration: {  }

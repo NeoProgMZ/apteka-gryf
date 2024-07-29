@@ -5,14 +5,13 @@ dependencies:
   config:
     - core.entity_form_mode.user.register
     - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_phone
     - field.field.user.user.field_user_first_name
     - field.field.user.user.field_user_last_name
-    - field.field.user.user.field_user_phone
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - image
-    - phone_international
     - profile
     - user
 _core:
@@ -55,19 +54,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_user_phone:
-    type: phone_international_widget
-    weight: 9
-    region: content
-    settings:
-      geolocation: false
-      initial_country: PL
-      exclude_countries:
-        - PL
-      preferred_countries:
-        - PL
-      countries: include
-    third_party_settings: {  }
   language:
     weight: 0
     region: content
@@ -86,4 +72,6 @@ content:
     third_party_settings: {  }
 hidden:
   commerce_remote_id: true
+  field_phone: true
   langcode: true
+  pickup_profiles: true

@@ -1,0 +1,19 @@
+uuid: de22d2bf-9519-47b3-88f2-fdce60de8c7a
+langcode: en
+status: true
+dependencies: {  }
+id: on_site
+label: 'On site'
+weight: null
+plugin: manual
+configuration:
+  display_label: Manual
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  instructions:
+    value: ''
+    format: plain_text
+conditions: {  }
+conditionOperator: AND

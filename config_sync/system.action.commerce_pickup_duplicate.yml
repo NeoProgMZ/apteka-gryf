@@ -1,0 +1,13 @@
+uuid: fcfc7827-7f19-4fed-b7d4-99738e290a23
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_pickup
+_core:
+  default_config_hash: J4gZj61a8RmUBZevFmcvBepScC5Y-P5mo9cAwLYX0bQ
+id: commerce_pickup_duplicate
+label: 'Duplicate pickup point'
+type: profile
+plugin: commerce_pickup_duplicate
+configuration: {  }

@@ -1,0 +1,31 @@
+uuid: f5d7ef34-a7c0-4e13-9f45-dfeee03046ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - assorted_fixes
+    - block_classes
+    - system
+  theme:
+    - pharmacy
+third_party_settings:
+  block_classes:
+    block_class: block-commerce-cart
+id: pharmacy_customcartflyout
+theme: pharmacy
+region: header
+weight: 0
+provider: null
+plugin: custom_commerce_cart_flyout
+settings:
+  id: custom_commerce_cart_flyout
+  label: 'Custom Cart Flyout'
+  label_display: '0'
+  provider: assorted_fixes
+  use_quantity_count: 0
+  use_amount: 1
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /cart

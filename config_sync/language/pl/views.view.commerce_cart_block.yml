@@ -11,8 +11,6 @@ display:
           sort_asc_label: Rosnąco
           sort_desc_label: Malejąco
       fields:
-        quantity:
-          separator: ', '
         title:
           separator: ', '
         total_price__number:

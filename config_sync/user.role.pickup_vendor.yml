@@ -1,0 +1,21 @@
+uuid: 608dd889-1a10-4830-b2f1-4484e8ee32b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_store
+    - profile
+_core:
+  default_config_hash: '-mRzQT11wsTEqXf_3-u08TabKednkBy2WnlBjhP582c'
+id: pickup_vendor
+label: 'Pickup vendor'
+weight: 5
+is_admin: null
+permissions:
+  - 'create pickup profile'
+  - 'delete own pickup profile'
+  - 'update own pickup profile'
+  - 'view commerce_store'
+  - 'view own pickup profile'
+  - 'view own profile'
+  - 'view own unpublished profile'

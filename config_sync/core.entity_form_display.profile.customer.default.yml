@@ -4,12 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.profile.customer.address
-    - field.field.profile.customer.field_customer_phone
+    - field.field.profile.customer.field_phone
     - field.field.profile.customer.tax_number
     - profile.type.customer
   module:
     - address
-    - phone_international
+    - mobile_number
   enforced:
     module:
       - commerce_order
@@ -27,18 +27,14 @@ content:
     settings:
       wrapper_type: fieldset
     third_party_settings: {  }
-  field_customer_phone:
-    type: phone_international_widget
+  field_phone:
+    type: mobile_number_default
     weight: 26
     region: content
     settings:
-      geolocation: false
-      initial_country: PL
-      exclude_countries:
-        - PL
-      preferred_countries:
-        - PL
-      countries: include
+      countries: {  }
+      default_country: US
+      placeholder: null
     third_party_settings: {  }
 hidden:
   is_default: true

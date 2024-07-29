@@ -1,0 +1,13 @@
+uuid: d7e7b83b-8465-4326-bd9c-4a98b7cb403e
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+_core:
+  default_config_hash: ej6yMyAyKKqhUmz9eg_G7gc-JWRrs0W8r223AWborUM
+id: profile.pickup_checkout
+label: 'Pickup checkout'
+description: ''
+targetEntityType: profile
+cache: true

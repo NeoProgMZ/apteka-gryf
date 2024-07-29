@@ -18,9 +18,9 @@ dependencies:
     - field.field.commerce_product_variation.default.field_quality_badge
     - field.field.commerce_product_variation.default.field_variant_photo
     - field.field.commerce_product_variation.default.weight
+    - image.style.thumbnail
   module:
-    - commerce_order
-    - commerce_price
+    - image
   enforced:
     module:
       - commerce_cart
@@ -32,32 +32,32 @@ targetEntityType: commerce_product_variation
 bundle: default
 mode: cart
 content:
-  list_price:
-    type: commerce_price_default
-    label: above
+  field_variant_photo:
+    type: image
+    label: hidden
     settings:
-      strip_trailing_zeroes: false
-      currency_display: symbol
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
-  price:
-    type: commerce_price_calculated
-    label: above
+  product_id:
+    type: entity_reference_label
+    label: hidden
     settings:
-      strip_trailing_zeroes: false
-      currency_display: symbol
-      adjustment_types: {  }
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
   title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
 hidden:
   field_bestseller: true
@@ -71,9 +71,9 @@ hidden:
   field_pharmacy_id: true
   field_promoted: true
   field_quality_badge: true
-  field_variant_photo: true
   langcode: true
-  product_id: true
+  list_price: true
+  price: true
   search_api_excerpt: true
   sku: true
   weight: true

@@ -1,0 +1,13 @@
+uuid: 3b953a8a-e62b-4d4f-8375-4ec2c397f12a
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_pickup
+_core:
+  default_config_hash: Ii_bcRjiZCxx61C9e4UurWDjDhhZS2nRj9eD3vzcYQI
+id: commerce_pickup_default
+label: 'Set default pickup point'
+type: profile
+plugin: commerce_pickup_default
+configuration: {  }

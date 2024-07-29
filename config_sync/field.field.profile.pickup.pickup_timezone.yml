@@ -1,0 +1,26 @@
+uuid: 4d47d39a-3f1a-4e49-af4d-ce641c393a70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.pickup_timezone
+    - profile.type.pickup
+  module:
+    - tzfield
+_core:
+  default_config_hash: yd2FbilT2ohf7HUlW7ZUxwoPFMcraKBGZv9UVFP_vkg
+id: profile.pickup.pickup_timezone
+field_name: pickup_timezone
+entity_type: profile
+bundle: pickup
+label: 'Pickup timezone'
+description: 'Make sure the time zone matches your current <em>Country</em> choice. You can set up the default value for this field <a href="/admin/config/regional/settings">here</a> or on your user account edit page.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  exclude: {  }
+  default_site: false
+  default_user: false
+field_type: tzfield

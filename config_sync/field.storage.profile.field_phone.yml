@@ -1,0 +1,20 @@
+uuid: b0de5f8a-bf1a-42f4-83f9-c1f3a61661c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - mobile_number
+    - profile
+id: profile.field_phone
+field_name: field_phone
+entity_type: profile
+type: mobile_number
+settings:
+  unique: 0
+module: mobile_number
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

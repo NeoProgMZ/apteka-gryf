@@ -1,0 +1,21 @@
+uuid: d70ffe38-ba59-43d4-9db3-b37333b12a90
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+    - tzfield
+_core:
+  default_config_hash: EcNOEKdl7QxeQAKWEYCF2WRJ4WKl4EqWdvFQ_dT15eE
+id: profile.pickup_timezone
+field_name: pickup_timezone
+entity_type: profile
+type: tzfield
+settings: {  }
+module: tzfield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
