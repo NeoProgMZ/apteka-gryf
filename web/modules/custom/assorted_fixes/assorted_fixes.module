@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\assorted_fixes\Plugin\Block\CartBlock;
+use Drupal\assorted_fixes\Plugin\Commerce\CheckoutPane\MiniLogin;
 use Drupal\assorted_fixes\Plugin\Commerce\CheckoutPane\SortedShippingInformation;
 
 /**
@@ -22,5 +23,24 @@ function assorted_fixes_commerce_checkout_pane_info_alter(array &$info)
     if (isset($info['shipping_information'])) {
         $info['shipping_information']['class'] = SortedShippingInformation::class;
         $info['shipping_information']['provider'] = 'assorted_fixes';
+    }
+
+    if (isset($info['login'])) {
+        $info['login']['class'] = MiniLogin::class;
+        $info['login']['provider'] = 'assorted_fixes';
+    }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function assorted_fixes_form_commerce_checkout_flow_multistep_default_alter(
+    &$form,
+    &$form_state,
+    $form_id
+) {
+    if (false === empty($form['login']) && false === empty($form['contact_information'])) {
+        $form['login']['guest']['contact_information'] = $form['contact_information'];
+        unset($form['contact_information']);
     }
 }
