@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
+    - assorted_fixes
     - commerce_payment
     - commerce_promotion
-    - commerce_shipping
 _core:
   default_config_hash: KDnx5MjFtp3-Rb0dGzCCzQEabHgvxrzxpkMrbOKsg_4
 label: Shipping
@@ -23,11 +23,16 @@ configuration:
       weight: 0
       allow_guest_checkout: true
       allow_registration: true
-      registration_form_mode: register
+      registration_form_mode: default
     contact_information:
-      step: order_information
+      step: login
       weight: 1
       double_entry: true
+    shipping_information:
+      step: order_information
+      weight: 2
+      auto_recalculate: false
+      require_shipping_profile: false
     review:
       step: review
       weight: 3
@@ -49,11 +54,6 @@ configuration:
       step: _sidebar
       weight: 7
       allow_multiple: false
-    shipping_information:
-      step: order_information
-      weight: 2
-      auto_recalculate: false
-      require_shipping_profile: false
     payment_information:
       step: _sidebar
       weight: 8
