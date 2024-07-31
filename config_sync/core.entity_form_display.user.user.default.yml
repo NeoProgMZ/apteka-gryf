@@ -7,10 +7,7 @@ dependencies:
     - field.field.user.user.field_phone
     - field.field.user.user.field_user_first_name
     - field.field.user.user.field_user_last_name
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
     - mobile_number
     - user
 _core:
@@ -63,14 +60,6 @@ content:
   timezone:
     weight: 6
     region: content
-  user_picture:
-    type: image_image
-    weight: -1
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
 hidden:
   commerce_remote_id: true
   customer_profiles: true

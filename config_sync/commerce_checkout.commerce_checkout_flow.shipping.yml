@@ -23,7 +23,7 @@ configuration:
       weight: 0
       allow_guest_checkout: true
       allow_registration: true
-      registration_form_mode: default
+      registration_form_mode: register
     contact_information:
       step: login
       weight: 1

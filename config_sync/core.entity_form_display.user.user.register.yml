@@ -8,11 +8,7 @@ dependencies:
     - field.field.user.user.field_phone
     - field.field.user.user.field_user_first_name
     - field.field.user.user.field_user_last_name
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
-    - profile
     - user
 _core:
   default_config_hash: FaQ9Ptcpxpg30AtiqRDtl_8zbJArHP1LPfug_s59TOA
@@ -22,25 +18,13 @@ bundle: user
 mode: register
 content:
   account:
-    weight: -10
+    weight: 2
     region: content
     settings: {  }
-    third_party_settings: {  }
-  contact:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  customer_profiles:
-    type: profile_form
-    weight: 90
-    region: content
-    settings:
-      form_mode: default
     third_party_settings: {  }
   field_user_first_name:
     type: string_textfield
-    weight: 7
+    weight: 0
     region: content
     settings:
       size: 60
@@ -48,30 +32,20 @@ content:
     third_party_settings: {  }
   field_user_last_name:
     type: string_textfield
-    weight: 8
+    weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  language:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
-  user_picture:
-    type: image_image
-    weight: -1
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
 hidden:
   commerce_remote_id: true
+  contact: true
+  customer_profiles: true
   field_phone: true
   langcode: true
+  language: true
   pickup_profiles: true
