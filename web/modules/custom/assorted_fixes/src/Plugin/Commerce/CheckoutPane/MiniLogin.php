@@ -7,6 +7,7 @@ use Drupal\user\UserInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
 use Drupal\commerce_checkout\Plugin\Commerce\CheckoutPane\Login;
+use Drupal\Core\Entity\EntityFormBuilder;
 
 /**
  * Provides the login pane.
@@ -35,84 +36,6 @@ class MiniLogin extends Login
         $pane_form['authentication_tabs'] = [
             '#type' => 'vertical_tabs',
             '#default_tab' => 'guest',
-        ];
-
-        $pane_form['guest'] = [
-            '#type' => 'details',
-            '#title' => $this->t('Guest Checkout'),
-            '#access' => $this->configuration['allow_guest_checkout'],
-            '#attributes' => [
-                'class' => [
-                    'form-wrapper__login-option',
-                    'form-wrapper__guest-checkout',
-                ],
-            ],
-            '#group' => 'authentication_tabs',
-            '#collapsible' => FALSE,
-            '#collapsed' => FALSE,
-        ];
-        $pane_form['guest']['text'] = [
-            '#prefix' => '<p>',
-            '#suffix' => '</p>',
-            '#markup' => $this->t('Proceed to checkout. You can optionally create an account at the end.'),
-            '#access' => $this->canRegisterAfterCheckout(),
-        ];
-        $pane_form['guest']['continue'] = [
-            '#type' => 'submit',
-            '#value' => $this->t('Continue as Guest'),
-            '#op' => 'continue',
-            '#attributes' => [
-                'formnovalidate' => 'formnovalidate',
-            ],
-            '#limit_validation_errors' => [],
-            '#submit' => [],
-        ];
-
-        $pane_form['returning_customer'] = [
-            '#type' => 'details',
-            '#title' => $this->t('Returning Customer'),
-            '#attributes' => [
-                'class' => [
-                    'form-wrapper__login-option',
-                    'form-wrapper__returning-customer',
-                ],
-            ],
-            '#group' => 'authentication_tabs',
-            '#collapsible' => TRUE,
-        ];
-        $pane_form['returning_customer']['name'] = [
-            '#type' => 'textfield',
-            '#title' => $this->t('Username'),
-            '#size' => 60,
-            '#maxlength' => UserInterface::USERNAME_MAX_LENGTH,
-            '#attributes' => [
-                'autocorrect' => 'none',
-                'autocapitalize' => 'none',
-                'spellcheck' => 'false',
-                'autofocus' => 'autofocus',
-            ],
-        ];
-        $pane_form['returning_customer']['password'] = [
-            '#type' => 'password',
-            '#title' => $this->t('Password'),
-            '#size' => 60,
-        ];
-        $pane_form['returning_customer']['submit'] = [
-            '#type' => 'submit',
-            '#value' => $this->t('Log in'),
-            '#op' => 'login',
-            '#attributes' => [
-                'formnovalidate' => 'formnovalidate',
-            ],
-            '#limit_validation_errors' => [
-                array_merge($pane_form['#parents'], ['returning_customer']),
-            ],
-            '#submit' => [],
-        ];
-        $pane_form['returning_customer']['forgot_password'] = [
-            '#type' => 'link',
-            '#title' => $this->t('Forgot password?'),
-            '#url' => Url::fromRoute('user.pass'),
         ];
 
         $pane_form['register'] = [
@@ -161,13 +84,98 @@ class MiniLogin extends Login
             '#weight' => 50,
         ];
 
+        // $rform = \Drupal::formBuilder()->buildForm(\Drupal\user\AccountForm::class, $form_state);
+
+        // print_r('<pre>');
+        // print_r(new \Drupal\user\RegisterForm());
+        // exit();
+
         /** @var \Drupal\user\UserInterface $account */
         $account = $this->entityTypeManager->getStorage('user')->create([]);
         $form_display = EntityFormDisplay::collectRenderDisplay(
             $account,
             $this->configuration['registration_form_mode']
         );
+
         $form_display->buildForm($account, $pane_form['register'], $form_state);
+
+        $pane_form['returning_customer'] = [
+            '#type' => 'details',
+            '#title' => $this->t('Returning Customer'),
+            '#attributes' => [
+                'class' => [
+                    'form-wrapper__login-option',
+                    'form-wrapper__returning-customer',
+                ],
+            ],
+            '#group' => 'authentication_tabs',
+            '#collapsible' => TRUE,
+        ];
+        $pane_form['returning_customer']['name'] = [
+            '#type' => 'textfield',
+            '#title' => $this->t('Username'),
+            '#size' => 60,
+            '#maxlength' => UserInterface::USERNAME_MAX_LENGTH,
+            '#attributes' => [
+                'autocorrect' => 'none',
+                'autocapitalize' => 'none',
+                'spellcheck' => 'false',
+                'autofocus' => 'autofocus',
+            ],
+        ];
+        $pane_form['returning_customer']['password'] = [
+            '#type' => 'password',
+            '#title' => $this->t('Password'),
+            '#size' => 60,
+        ];
+        $pane_form['returning_customer']['submit'] = [
+            '#type' => 'submit',
+            '#value' => $this->t('Log in'),
+            '#op' => 'login',
+            '#attributes' => [
+                'formnovalidate' => 'formnovalidate',
+            ],
+            '#limit_validation_errors' => [
+                array_merge($pane_form['#parents'], ['returning_customer']),
+            ],
+            '#submit' => [],
+        ];
+        $pane_form['returning_customer']['forgot_password'] = [
+            '#type' => 'link',
+            '#title' => $this->t('Forgot password?'),
+            '#url' => Url::fromRoute('user.pass'),
+        ];
+
+        $pane_form['guest'] = [
+            '#type' => 'details',
+            '#title' => $this->t('Guest Checkout'),
+            '#access' => $this->configuration['allow_guest_checkout'],
+            '#attributes' => [
+                'class' => [
+                    'form-wrapper__login-option',
+                    'form-wrapper__guest-checkout',
+                ],
+            ],
+            '#group' => 'authentication_tabs',
+            '#collapsible' => FALSE,
+            '#collapsed' => FALSE,
+        ];
+        $pane_form['guest']['text'] = [
+            '#prefix' => '<p>',
+            '#suffix' => '</p>',
+            '#markup' => $this->t('Proceed to checkout. You can optionally create an account at the end.'),
+            '#access' => $this->canRegisterAfterCheckout(),
+        ];
+        $pane_form['guest']['continue'] = [
+            '#type' => 'submit',
+            '#value' => $this->t('Continue as Guest'),
+            '#op' => 'continue',
+            '#attributes' => [
+                'formnovalidate' => 'formnovalidate',
+            ],
+            '#limit_validation_errors' => [],
+            '#submit' => [],
+        ];
 
         $pane_form['visibility_tabs']['visibility_tabs__active_tab'] = [
             '#type' => 'hidden',

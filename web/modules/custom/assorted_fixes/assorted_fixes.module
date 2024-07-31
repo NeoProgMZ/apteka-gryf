@@ -40,7 +40,19 @@ function assorted_fixes_form_commerce_checkout_flow_multistep_default_alter(
     $form_id
 ) {
     if (false === empty($form['login']) && false === empty($form['contact_information'])) {
-        $form['login']['guest']['contact_information'] = $form['contact_information'];
-        unset($form['contact_information']);
+        // print_r('<pre>');
+        // print_r(array_keys($form['login']['register']));
+        // exit();
+        $tmp = [
+            'contact_information' => $form['contact_information'],
+            'text' => $form['login']['guest']['text'],
+            'continue' => $form['login']['guest']['continue'],
+        ];
+        unset(
+            $form['login']['guest']['text'],
+            $form['login']['guest']['continue']
+        );
+        $form['login']['guest'] = array_merge($form['login']['guest'], $tmp);
+        unset($form['contact_information'], $tmp);
     }
 }

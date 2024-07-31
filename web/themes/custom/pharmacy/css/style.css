@@ -417,3 +417,20 @@ a.navbar-brand span.site-name-slogan {
 .cart-block--summary__icon img {
     width: 25px;
 }
+
+.commerce-checkout-flow-multistep-default .vertical-tabs {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.commerce-checkout-flow-multistep-default .vertical-tabs .vertical-tabs__menu {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.commerce-checkout-flow-multistep-default .vertical-tabs .form-wrapper__guest-checkout,
+.commerce-checkout-flow-multistep-default .vertical-tabs .form-wrapper__returning-customer {
+    float: none;
+    margin: 0px auto;
+}
