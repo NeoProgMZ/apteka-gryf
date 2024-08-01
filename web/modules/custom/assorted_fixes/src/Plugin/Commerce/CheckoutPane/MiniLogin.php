@@ -133,6 +133,7 @@ class MiniLogin extends Login
             '#group' => 'authentication_tabs',
             '#collapsible' => TRUE,
         ];
+        // @IDEA take this from a custom user form display.
         $pane_form['guest']['text'] = [
             '#prefix' => '<p>',
             '#suffix' => '</p>',
