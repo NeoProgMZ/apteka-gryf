@@ -52,46 +52,20 @@ class MiniLogin extends Login
             '#group' => 'authentication_tabs',
             '#collapsible' => TRUE,
         ];
-        $pane_form['register']['mail'] = [
-            '#type' => 'email',
-            '#title' => $this->t('Email address'),
-            '#required' => FALSE,
-        ];
-        $pane_form['register']['name'] = [
-            '#type' => 'textfield',
-            '#title' => $this->t('Username'),
-            '#maxlength' => UserInterface::USERNAME_MAX_LENGTH,
-            '#description' => $this->t("Several special characters are allowed, including space, period (.), hyphen (-), apostrophe ('), underscore (_), and the @ sign."),
-            '#required' => FALSE,
-            '#attributes' => [
-                'class' => ['username'],
-                'autocorrect' => 'off',
-                'autocapitalize' => 'off',
-                'spellcheck' => 'false',
-            ],
-            '#default_value' => '',
-        ];
-        $pane_form['register']['password'] = [
-            '#type' => 'password_confirm',
-            '#size' => 60,
-            '#description' => $this->t('Provide a password for the new account in both fields.'),
-            '#required' => FALSE,
-        ];
-        $pane_form['register']['register'] = [
-            '#type' => 'submit',
-            '#value' => $this->t('Create account and continue'),
-            '#op' => 'register',
-            '#weight' => 50,
-        ];
-
-        // $rform = \Drupal::formBuilder()->buildForm(\Drupal\user\AccountForm::class, $form_state);
-
-        // print_r('<pre>');
-        // print_r(new \Drupal\user\RegisterForm());
-        // exit();
-
+        // @FIXME check if registration works like this!
         /** @var \Drupal\user\UserInterface $account */
         $account = $this->entityTypeManager->getStorage('user')->create([]);
+        $userFormObject = $this->entityTypeManager
+            ->getFormObject('user', $this->configuration['registration_form_mode'])
+            ->setEntity($account);
+        $userForm = \Drupal::formBuilder()->getForm($userFormObject);
+
+        foreach ($userForm as $key => $element) {
+            if (strpos($key, '#') === false) {
+                $pane_form['register'][$key] = $element;
+            }
+        }
+
         $form_display = EntityFormDisplay::collectRenderDisplay(
             $account,
             $this->configuration['registration_form_mode']
@@ -157,8 +131,7 @@ class MiniLogin extends Login
                 ],
             ],
             '#group' => 'authentication_tabs',
-            '#collapsible' => FALSE,
-            '#collapsed' => FALSE,
+            '#collapsible' => TRUE,
         ];
         $pane_form['guest']['text'] = [
             '#prefix' => '<p>',
@@ -187,4 +160,7 @@ class MiniLogin extends Login
 
         return $pane_form;
     }
+
+    // @FIXME validation changed!
+    // @QUESTION can we get validation from parent form? 
 }
